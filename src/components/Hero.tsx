@@ -14,7 +14,7 @@ export default function Hero() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <button className='btn btn-soft btn-xs sm:btn-sm md:btn-md btn-info transition-all ease-in-out duration-300 hover:scale-105'>
+          <button className='btn btn-soft btn-md sm:btn-sm md:btn-md btn-info transition-all ease-in-out duration-300 hover:scale-105'>
             {' '}
             <DownloadIcon />
             Descargar CV
@@ -24,7 +24,7 @@ export default function Hero() {
           href={'mailto:carlosfrontend@hotmail.com'}
           rel='noopener noreferrer'
         >
-          <button className='btn btn-soft btn-xs sm:btn-sm md:btn-md btn-secondary hover:scale-105 ease-in-out transition-all duration-300'>
+          <button className='btn btn-soft btn-md sm:btn-sm md:btn-md btn-secondary hover:scale-105 ease-in-out transition-all duration-300'>
             <EmailIcon />
             Enviar Email
           </button>
@@ -40,8 +40,8 @@ export default function Hero() {
         tabIndex={0}
       >
         <figure className='px-10 pt-10 '>
-          <div className='w-24 rounded-full transition-all duration-300 text-success md:text-white avatar avatar-online md:before:bg-gray-600 md:group-hover:before:bg-success'>
-            <span className='text-xs text-center  absolute -inset-6 left-14.5 w-[15ch]  md:left-14 md:w-[30ch] md:top-0.5 md:group-hover:text-success group-hover:animate-pulse font-semibold'>
+          <div className='w-24 rounded-full transition-all duration-300 text-success md:text-base-content avatar avatar-online md:before:bg-gray-600 md:group-hover:before:bg-success'>
+            <span className='text-xs text-center  absolute -inset-6 left-20 w-[15ch]  md:left-14 md:w-[30ch] md:top-0.5 md:group-hover:text-success group-hover:animate-pulse font-semibold'>
               Disponible para trabajar
             </span>
             <Image

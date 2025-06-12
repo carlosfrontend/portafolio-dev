@@ -4,7 +4,7 @@ import ProfilePicture from "@/assets/images/profile_picture.webp"
 export default function ChatBubble() {
   return (
     <div className="chat chat-start">
-      <div className="chat-image avatar">
+      <div className="chat-image avatar avatar-online">
         <div className="w-10 rounded-full">
           <Image
             className="rounded-full"
