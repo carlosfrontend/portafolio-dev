@@ -4,6 +4,7 @@ import Image from 'next/image';
 import DownloadIcon from '@/components/icons/DownloadIcon';
 import EmailIcon from './icons/EmailIcon';
 import CopyIcon from './icons/CopyIcon';
+import CopyEmailButton from './CopyEmailButton';
 
 export default function Hero() {
   return (
@@ -29,16 +30,15 @@ export default function Hero() {
             Enviar Email
           </button>
         </Link>
-        <button className='btn btn-soft btn-xs sm:btn-sm md:btn-md btn-accent hover:scale-105 transition-all ease-in-out duration-300'>
-          <CopyIcon />
-          Copiar Email
-        </button>
+        <CopyEmailButton />
       </div>
       <Link
         href={'https://www.linkedin.com/in/carlosfrontend/'}
         rel='noopener noreferrer'
         target='_blank'
-        className=' group '
+        className=' group outline-none hover:outline-none'
+        title='Visita mi perfil de LinkedIn'
+        tabIndex={0}
       >
         <figure className='px-10 pt-10 '>
           <div className='w-24 rounded-full transition-all duration-300 text-success md:text-white avatar avatar-online md:before:bg-gray-600 md:group-hover:before:bg-success'>
