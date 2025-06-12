@@ -7,10 +7,6 @@ const ThemeSelector: FC = () => {
     const [mounted, setMounted] = useState<boolean>(false);
 
     useEffect(() => {
-        console.log('theme:', theme, 'resolvedTheme:', resolvedTheme);
-    }, [theme, resolvedTheme]);
-
-    useEffect(() => {
         setMounted(true);
     }, []);
 
