@@ -7,7 +7,7 @@ import CopyEmailButton from './CopyEmailButton';
 
 export default function Hero() {
   return (
-    <div className='card bg-base-100 w-96  md:w-[480px] shadow-sm'>
+    <div className='card bg-base-100 w-96 md:w-[480px] relative -top-40 shadow-sm'>
       <div className='flex gap-4 justify-center items-center pt-10 flex-wrap flex-col md:flex-row'>
         <Link
           href={'/Carlos_Pulido_CV_ES_.pdf'}
@@ -52,7 +52,7 @@ export default function Hero() {
           </div>
         </figure>
       </Link>
-      <div className='card-body items-center text-center pb-10'>
+      <div className='card-body items-center justify-center text-center pb-10'>
         <h1 className=' text-pretty text-4xl font-extrabold'>
           Hola, soy{' '}
           <span className='bg-gradient-to-r from-accent to-primary bg-clip-text  font-extrabold text-transparent'>

@@ -13,17 +13,9 @@
 @custom-variant dark (&:where([data-theme=business], [data-theme=business] *));
 html {
   color-scheme: corporate;
+  @apply h-full;
 }
 
-/* [data-theme='corporate'] {
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+body {
+  @apply h-full;
 }
-
-[data-theme='business'] {
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
- */

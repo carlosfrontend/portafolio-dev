@@ -1,10 +1,11 @@
 import Hero from '@/components/Hero'
-import { ToastContainer } from 'react-toastify';
+
 export default function Home() {
   return (
-    <article className='flex  items-start pt-10 md:justify-center justify-center min-h-screen drop-shadow-xl'>
-      <ToastContainer />
+
+    <article className='flex flex-col items-center h-full pt-55 md:pt-80  md:justify-center justify-center drop-shadow-xl '>
       <Hero />
     </article>
+
   );
 }

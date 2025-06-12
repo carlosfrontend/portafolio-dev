@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from '@/components/theme-provider';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
 
 
 const inter = Inter_Tight({
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${inter.className}  antialiased`}>
+        <ToastContainer />
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="system"
@@ -38,7 +40,7 @@ export default function RootLayout({
 
         >
           <Navbar />
-          <main className="container mx-auto px-4 min-h-screen">
+          <main className="container mx-auto px-4  overflow-hidden">
             {children}
           </main>
           <Footer />
