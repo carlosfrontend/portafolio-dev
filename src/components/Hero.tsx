@@ -3,7 +3,6 @@ import ProfilePicture from '@/assets/images/profile_picture.webp';
 import Image from 'next/image';
 import DownloadIcon from '@/components/icons/DownloadIcon';
 import EmailIcon from './icons/EmailIcon';
-import CopyIcon from './icons/CopyIcon';
 import CopyEmailButton from './CopyEmailButton';
 
 export default function Hero() {
