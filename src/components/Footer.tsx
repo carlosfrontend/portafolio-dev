@@ -7,7 +7,7 @@ import DiscordIcon from './icons/DiscordIcon';
 
 export default function Footer() {
   return (
-    <footer className='footer sm:footer-horizontal bg-base-100   text-base-content items-center p-4 shadow-md absolute bottom-0 left-0'>
+    <footer className='footer static bottom-0 left-0 sm:footer-horizontal bg-base-100   text-base-content items-center p-4 shadow-md '>
       <aside className='grid-flow-col items-center'>
         <Image
           src={BrandLogo}

@@ -4,33 +4,12 @@ import Image from 'next/image';
 import DownloadIcon from '@/components/icons/DownloadIcon';
 import EmailIcon from './icons/EmailIcon';
 import CopyEmailButton from './CopyEmailButton';
+import Stats from './Stats';
 
 export default function Hero() {
   return (
-    <div className='card bg-base-100 w-96 md:w-[480px] relative -top-40 shadow-sm'>
-      <div className='flex gap-4 justify-center items-center pt-10 flex-wrap flex-col md:flex-row'>
-        <Link
-          href={'/Carlos_Pulido_CV_ES_.pdf'}
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <button className='btn btn-soft btn-md sm:btn-sm md:btn-md btn-info transition-all ease-in-out duration-300 hover:scale-105'>
-            {' '}
-            <DownloadIcon />
-            Descargar CV
-          </button>
-        </Link>
-        <Link
-          href={'mailto:carlosfrontend@hotmail.com'}
-          rel='noopener noreferrer'
-        >
-          <button className='btn btn-soft btn-md sm:btn-sm md:btn-md btn-secondary hover:scale-105 ease-in-out transition-all duration-300'>
-            <EmailIcon />
-            Enviar Email
-          </button>
-        </Link>
-        <CopyEmailButton />
-      </div>
+    <div className='sm:bg-base-100 w-96 md:w-[480px] flex flex-col justify-between gap-6 py-6 shadow-sm'>
+
       <Link
         href={'https://www.linkedin.com/in/carlosfrontend/'}
         rel='noopener noreferrer'
@@ -39,9 +18,9 @@ export default function Hero() {
         title='Visita mi perfil de LinkedIn'
         tabIndex={0}
       >
-        <figure className='px-10 pt-10 '>
+        <figure className='flex justify-center items-center '>
           <div className='w-24 rounded-full transition-all duration-300 text-success md:text-base-content avatar avatar-online md:before:bg-gray-600 md:group-hover:before:bg-success'>
-            <span className='text-xs text-center  absolute -inset-6 left-20 w-[15ch]  md:left-14 md:w-[30ch] md:top-0.5 md:group-hover:text-success group-hover:animate-pulse font-semibold'>
+            <span className='text-xs text-center  absolute -inset-6 left-20 w-[15ch]  md:left-14 md:w-[30ch] md:top-0.5 md:group-hover:text-success group-hover:animate-pulse font-semibold pt-6'>
               Disponible para trabajar
             </span>
             <Image
@@ -67,6 +46,31 @@ export default function Hero() {
             Conóceme
           </Link>
         </div>
+      </div>
+
+      <div className='flex w-[180px] md:w-full self-center gap-4 justify-center items-stretch  flex-wrap flex-col md:flex-row'>
+        <Link
+          href={'/Carlos_Pulido_CV_ES_.pdf'}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <button className='btn btn-soft btn-md sm:btn-sm w-full flex justify-center items-center md:btn-md btn-info transition-all ease-in-out duration-300 hover:scale-105 sm:py-5 sm-px-2'>
+            {' '}
+            <DownloadIcon />
+            Descargar CV
+          </button>
+        </Link>
+        <Link
+          href={'mailto:carlosfrontend@hotmail.com'}
+          rel='noopener noreferrer'
+        >
+          <button className='btn btn-soft btn-md sm:btn-sm w-full flex justify-center md:btn-md btn-secondary hover:scale-105 ease-in-out transition-all duration-300 sm:py-5 sm-px-2'>
+            <EmailIcon />
+            Enviar Email
+          </button>
+        </Link>
+        <CopyEmailButton />
+        <Stats />
       </div>
     </div>
   );

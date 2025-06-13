@@ -2,10 +2,8 @@ import Hero from '@/components/Hero'
 
 export default function Home() {
   return (
-
-    <article className='flex flex-col items-center h-full pt-55 md:pt-80  md:justify-center justify-center drop-shadow-xl '>
+    <main className='relative overflow-hidden place-items-center content-center min-h-screen bg-base-200 py-20 '>
       <Hero />
-    </article>
-
+    </main>
   );
 }

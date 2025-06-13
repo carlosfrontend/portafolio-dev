@@ -15,7 +15,7 @@ export default function ChatBubble() {
           />
         </div>
       </div>
-      <div className="chat-bubble">Gracias por copiar mi email!. <br />Ahora puedes pegarlo en en tu cliente de correo electrónico para mandarme un mensaje.</div>
+      <div className="chat-bubble">Gracias por copiar mi email!. <br />Ahora puedes pegarlo en en tu cliente de correo electrónico para enviarme un mensaje.</div>
     </div>
 
   )

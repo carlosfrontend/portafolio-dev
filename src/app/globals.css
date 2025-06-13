@@ -13,9 +13,8 @@
 @custom-variant dark (&:where([data-theme=business], [data-theme=business] *));
 html {
   color-scheme: corporate;
-  @apply h-full;
 }
 
 body {
-  @apply h-full;
+  min-height: 100dvh;
 }

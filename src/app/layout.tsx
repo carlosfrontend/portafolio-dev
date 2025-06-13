@@ -40,9 +40,7 @@ export default function RootLayout({
 
         >
           <Navbar />
-          <main className="container mx-auto px-4  overflow-hidden">
-            {children}
-          </main>
+          {children}
           <Footer />
         </ThemeProvider>
       </body>
