@@ -40,7 +40,9 @@ export default function RootLayout({
 
         >
           <Navbar />
-          {children}
+          <main className='flex overflow-hidden justify-center min-h-screen bg-base-200 py-20 '>
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
