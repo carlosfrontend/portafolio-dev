@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <div className='sm:bg-base-100 w-96 md:w-[480px] flex flex-col justify-between gap-6 py-6 shadow-sm'>
 
-      <Link
+      <a
         href={'https://www.linkedin.com/in/carlosfrontend/'}
         rel='noopener noreferrer'
         target='_blank'
@@ -30,7 +30,7 @@ export default function Hero() {
             />
           </div>
         </figure>
-      </Link>
+      </a>
       <div className='card-body items-center justify-center text-center pb-10'>
         <h1 className=' text-pretty text-4xl font-extrabold'>
           Hola, soy{' '}

@@ -1,8 +1,8 @@
 'use client';
 import { useTheme } from 'next-themes';
-import { useState, useEffect, FC } from 'react';
+import { useState, useEffect, FC, ReactNode } from 'react';
 
-const ThemeSelector: FC = () => {
+const ThemeSelector: FC = (): ReactNode => {
     const { theme, setTheme, resolvedTheme } = useTheme();
     const [mounted, setMounted] = useState<boolean>(false);
 

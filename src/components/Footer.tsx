@@ -1,9 +1,7 @@
 import Image from 'next/image';
 import BrandLogo from '@/assets/images/logo.webp';
-import LinkedInIcon from './icons/LinkedinIcon';
-import GitHubIcon from './icons/GitHubIcon';
-import XIcon from './icons/XIcon';
-import DiscordIcon from './icons/DiscordIcon';
+import { SOCIAL_LINKS } from '@/consts/consts';
+import React from 'react';
 
 export default function Footer() {
   return (
@@ -19,22 +17,21 @@ export default function Footer() {
         <p>Hecho por Carlos Pulido en {new Date().getFullYear()} </p>
       </aside>
       <nav className='grid-flow-col gap-4 md:place-self-center md:justify-self-center'>
-        <a href='https://www.linkedin.com/in/carlosfrontend/' target='_blank' className="transition ease-in-out hover:scale-110 duration-300" rel='noopener noreferrer' title='Visita mi perfil de LinkedIn'>
-          <span className='sr-only'>LinkedIn</span>
-          <LinkedInIcon />
-        </a>
-        <a href='https://github.com/carlosfrontend' target='_blank' className="transition ease-in-out hover:scale-110 duration-300" rel='noopener noreferrer' title='Visita mi perfil de GitHub'>
-          <span className='sr-only'>GitHub</span>
-          <GitHubIcon />
-        </a>
-        <a href='https://twitter.com/carlosfrontend' target='_blank' className='transition ease-in-out hover:scale-110 duration-300' rel='noopener noreferrer' title='Visita mi perfil de Twitter'>
-          <span className='sr-only'>Twitter</span>
-          <XIcon />
-        </a>
-        <a href='https://discord.com/invite/2wyag2pN6q' className='transition ease-in-out hover:scale-110 duration-300' target='_blank' rel='noopener noreferrer' title='Únete a mi servidor de Discord'>
-          <span className='sr-only'>Discord</span>
-          <DiscordIcon />
-        </a>
+        {
+          SOCIAL_LINKS.map(({ href, icon, srTitle }) => (
+            <a
+              href={href}
+              target='_blank'
+              rel='noopener noreferrer'
+              key={href}
+              className='transition ease-in-out hover:scale-110 duration-300'
+              title={srTitle}
+            >
+              <span className='sr-only'>{srTitle}</span>
+              {icon && React.createElement(icon)}
+            </a>
+          ))
+        }
       </nav>
     </footer>
   );
