@@ -69,7 +69,7 @@ export default function Hero() {
             Enviar Email
           </button>
         </Link>
-        <CopyEmailButton />
+        <CopyEmailButton>Copiar Email</CopyEmailButton>
         <Stats />
       </div>
     </div>

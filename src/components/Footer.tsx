@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import BrandLogo from '@/assets/images/logo.png';
+import BrandLogo from '@/assets/images/logo.webp';
 import LinkedInIcon from './icons/LinkedinIcon';
 import GitHubIcon from './icons/GitHubIcon';
 import XIcon from './icons/XIcon';

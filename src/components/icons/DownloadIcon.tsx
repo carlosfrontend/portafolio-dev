@@ -1,4 +1,6 @@
-export default function DownloadIcon() {
+import { SVGProps } from "react";
+
+export default function DownloadIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -7,6 +9,7 @@ export default function DownloadIcon() {
       strokeWidth={1.5}
       stroke='currentColor'
       className='size-4'
+      {...props}
     >
       <path
         strokeLinecap='round'

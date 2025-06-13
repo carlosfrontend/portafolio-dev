@@ -1,7 +1,9 @@
 
 import Image from "next/image"
 import ProfilePicture from "@/assets/images/profile_picture.webp"
-export default function ChatBubble() {
+import { ReactNode } from "react";
+
+export default function ChatBubble({ children }: { children: ReactNode }) {
   return (
     <div className="chat chat-start">
       <div className="chat-image avatar avatar-online">
@@ -15,7 +17,9 @@ export default function ChatBubble() {
           />
         </div>
       </div>
-      <div className="chat-bubble">Gracias por copiar mi email!. <br />Ahora puedes pegarlo en en tu cliente de correo electrónico para enviarme un mensaje.</div>
+      <div className="chat-bubble">
+        {children}
+      </div>
     </div>
 
   )

@@ -1,5 +1,5 @@
 'use client'
-import BrandLogo from '@/assets/images/logo.png'
+import BrandLogo from '@/assets/images/logo.webp'
 import Image from 'next/image'
 import ThemeSelector from './ThemeSelector'
 import Link from 'next/link'
