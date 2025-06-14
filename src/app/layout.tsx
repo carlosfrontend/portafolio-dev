@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${inter.className}  antialiased`}>
+      <body className={`${inter.className}  antialiased min-h-dvh grid-rows-[auto_1fr_auto]`}>
         <ToastContainer />
         <ThemeProvider
           attribute="data-theme"
@@ -40,7 +40,7 @@ export default function RootLayout({
 
         >
           <Navbar />
-          <main className='flex overflow-hidden justify-center min-h-screen bg-base-200 py-20 '>
+          <main className="min-h-dvh">
             {children}
           </main>
           <Footer />
