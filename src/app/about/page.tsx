@@ -11,12 +11,12 @@ export default function AboutPage() {
     return (
 
         <div className='flex flex-col justify-center items-center'>
-            <section className='w-full md:w-[640px]'>
-                <article className='relative top-20 md:top-20 p-6' id='intro'>
-                    <h1 className='text-center text-6xl font-extrabold !mb-0 !mt-0 text-accent'>Carlos Pulido</h1>
-                    <h2 className='pt-2 text-2xl text-center font-semibold !mb-0 !mt-0'>Desarrollador Frontend</h2>
+            <section className='w-full pt-20 md:w-[640px]'>
+                <h1 className='text-center text-5xl md:text-6xl font-extrabold !mb-0 !mt-0 text-accent'>Carlos Pulido</h1>
+                <h2 className='pt-2 text-xl md:text-2xl text-center font-semibold !mb-0 !mt-0'>Desarrollador Frontend</h2>
+                <article className='relative p-6' id='intro'>
 
-                    <h3 className='divider py-16 text-4xl text-accent font-bold'>Introducción</h3>
+                    <h3 className='md:divider text-center py-10 text-3xl md:text:4xl text-accent font-bold'>Introducción</h3>
                     <div className='prose prose-xl lg:prose-xl text-pretty text-justify  p-4'>
                         <p>¡Hola!, muchas gracias por pasarte por mi rincón en la web.</p>
                         <p>
@@ -41,11 +41,11 @@ export default function AboutPage() {
                         </p>
                     </div>
                 </article >
-                <div className=' mt-20 flex flex-col items-stretch'>
+                <article id='skills' className='flex flex-col items-stretch'>
                     <InfiniteScrollIcons />
-                </div>
-                <article id='timeline'>
-                    <h3 className='divider py-16 text-4xl text-accent font-bold'>Línea de tiempo</h3>
+                </article>
+                <article className='pb-20' id='timeline'>
+                    <h3 className='md:divider text-center py-16 text-3xl md:text:5xl text-accent font-bold'>Línea de tiempo</h3>
                     <div className='grid grid-cols-1 place-items-center justify-center'>
                         <ul className="timeline timeline-vertical md:timeline-box p-6">
                             <li>

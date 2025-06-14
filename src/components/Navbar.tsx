@@ -1,6 +1,4 @@
 'use client'
-import BrandLogo from '@/assets/images/logo.webp'
-import Image from 'next/image'
 import ThemeSelector from './ThemeSelector'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -34,8 +32,8 @@ export default function Navbar() {
                         ))}
                     </ul>
                 </div>
-                <Link href={"/"} className="btn btn-ghost text-xl">
-                    <Image src={BrandLogo} alt="Brand Logo" width={55} height={55} priority />Portafolio
+                <Link href={"/"} className="btn btn-ghost text-[15px] md:text-2xl">
+                    Portafolio de Carlos Pulido
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">

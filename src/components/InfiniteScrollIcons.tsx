@@ -16,7 +16,7 @@ export default function InfiniteScrollIcons() {
 
     if (!mounted || !resolvedTheme) {
         return <article id="skills" className="overflow-hidden">
-            <h3 className="divider py-16 text-4xl text-accent font-bold">Habilidades</h3>
+            <h3 className="md:divider text-center py-16 text-4xl text-accent font-bold">Habilidades</h3>
             <div className="h-18 flex items-center justify-center">
                 Cargando habilidades...
             </div>
@@ -29,8 +29,8 @@ export default function InfiniteScrollIcons() {
     const GitHubIcon = resolvedTheme === 'business' ? GitHubDark : GitHubLight;
 
     return (
-        <article id="skills " className=" overflow-hidden">
-            <h3 className="divider py-16 text-4xl text-accent font-bold">Habilidades</h3>
+        <div className=" overflow-hidden">
+            <h3 className="md:divider text-center py-16 text-3xl md:text:4xl text-accent font-bold">Habilidades</h3>
             <Marquee gradient={false} speed={40} className='mask-x-from-60% mask-x-to-100%'>
                 <Vite className="size-18 aspect-video mx-4" aria-label="Logotipo de Vite" />
                 <HTML5 className="size-18 aspect-video mx-4" aria-label='Logotipo de HTML' />
@@ -51,6 +51,6 @@ export default function InfiniteScrollIcons() {
                 <Bun className="size-18 aspect-square mx-4" aria-label='Logotipo de Bun' />
                 <DaisyUI className="size-18 aspect-square mx-4" aria-label='Logotipo de DaisyUI' />
             </Marquee>
-        </article>
+        </div>
     )
 }

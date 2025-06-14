@@ -20,8 +20,8 @@ export default function Hero() {
           tabIndex={0}
         >
           <figure className='flex justify-center pt-10 '>
-            <div className='w-24 rounded-full transition-all duration-300 text-success md:text-base-content avatar avatar-online md:before:bg-gray-600 md:group-hover:before:bg-success'>
-              <span className='text-xs text-center  absolute -inset-6 left-20 w-[15ch]  md:left-14 md:w-[30ch] md:top-0.5 md:group-hover:text-success group-hover:animate-pulse font-semibold pt-6'>
+            <div className='w-24 rounded-full transition-all duration-300 text-success md:text-base-content avatar avatar-online'>
+              <span className='text-xs text-center  absolute -inset-6 left-20 w-[15ch]  md:left-14 md:w-[30ch] md:top-0.5 text-success lg:text-base-content md:group-hover:text-success lg:group-hover:animate-pulse font-semibold pt-6'>
                 Disponible para trabajar
               </span>
               <Image
