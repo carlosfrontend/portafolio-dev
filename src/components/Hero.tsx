@@ -15,19 +15,19 @@ export default function Hero() {
           href={'https://www.linkedin.com/in/carlosfrontend/'}
           rel='noopener noreferrer'
           target='_blank'
-          className=' group outline-none hover:outline-none'
+          className='group'
           title='Visita mi perfil de LinkedIn'
           tabIndex={0}
         >
           <figure className='flex justify-center pt-10 '>
-            <div className='w-24 rounded-full transition-all duration-300 text-success md:text-base-content avatar avatar-online'>
-              <span className='text-xs text-center  absolute -inset-6 left-20 w-[15ch]  md:left-14 md:w-[30ch] md:top-0.5 text-success lg:text-base-content md:group-hover:text-success lg:group-hover:animate-pulse font-semibold pt-6'>
+            <div className='w-24 rounded-full text-success md:text-base-content avatar avatar-online'>
+              <span className='text-xs text-center  absolute -inset-6 left-20 w-[15ch]  md:left-14 md:w-[30ch] md:top-0. font-semibold pt-6'>
                 Disponible para trabajar
               </span>
               <Image
                 src={ProfilePicture}
                 alt='Profile Picture'
-                className='rounded-full bg-base-100  opacity-80 transition-all duration-300 group-hover:opacity-100  group-hover: backdrop-blur-md'
+                className='rounded-full bg-base-100  opacity-85 transition-opacity duration-300 group-hover:opacity-100  group-hover: backdrop-blur-md'
               />
             </div>
           </figure>
@@ -42,7 +42,7 @@ export default function Hero() {
           <h2 className='text-2xl text-base-content font-medium py-4'>
             Desarrollador Web Frontend
           </h2>
-          <div className='card-actions animate-pulse'>
+          <div className='card-actions motion-safe:animate-pulse'>
             <Link href='/about' className='btn btn-primary'>
               Conóceme
             </Link>

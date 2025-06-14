@@ -20,7 +20,7 @@ export default function Stats() {
 
             </Link>
 
-            <Link href="/blog" className='hover:scale-105 transition-all duration-300 hover:shadow-lg group'>
+            <Link href="/blog" className='hover:scale-105 transition-colors duration-300 hover:shadow-lg group'>
                 <div className="shadow">
                     <div className="stat w-full gap-2 md:w-[200px] border-none bg-base-100">
                         <div className="group-hover:text-base-content text-base-content">Entradas de blog</div>
