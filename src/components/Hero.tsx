@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link';
 import ProfilePicture from '@/assets/images/profile_picture.webp';
 import Image from 'next/image';
@@ -5,8 +6,48 @@ import DownloadIcon from '@/components/icons/DownloadIcon';
 import EmailIcon from './icons/EmailIcon';
 import CopyEmailButton from './CopyEmailButton';
 import Stats from './Stats';
+import { gsap } from 'gsap';
+import { useGSAP } from "@gsap/react";
+import { SplitText } from 'gsap/SplitText';
+import { useRef } from 'react';
+
 
 export default function Hero() {
+  gsap.registerPlugin(useGSAP);
+  const title = useRef<HTMLDivElement>(null);
+  const subtitle = useRef<HTMLDivElement>(null);
+  const linkButton = useRef<HTMLAnchorElement>(null);
+  const tl = gsap.timeline(
+    {
+      defaults: {
+        duration: 1,
+      },
+    }
+  );
+
+  useGSAP(() => {
+    const splitTextTitle = SplitText.create(title.current, { type: "words" });
+    const splitTextSubtitle = SplitText.create(subtitle.current, { type: "words" });
+    tl.from(splitTextTitle.words, {
+      y: 10,
+      stagger: 0.2,
+      autoAlpha: 0,
+      filter: 'blur(10px)'
+    }).from(
+      splitTextSubtitle.words, {
+      y: 8,
+      stagger: 0.2,
+      autoAlpha: 0,
+      filter: 'blur(10px)'
+    }, "1"
+    ).from(linkButton.current, {
+      duration: 2,
+      scale: 1.1,
+      stagger: 0.2,
+      autoAlpha: 0,
+    }, "2");
+  });
+
   return (
     <div className='relative top-0 min-h-dvh flex justify-center items-center bg-none md:bg-base-200'>
       <div className=' w-96 md:w-[480px] flex flex-col justify-between mdshadow-md bg-none shadow-none md:bg-base-100'>
@@ -33,17 +74,14 @@ export default function Hero() {
           </figure>
         </a>
         <div className='card-body  items-center justify-center text-center text-primary-content'>
-          <h1 className=' text-pretty text-base-content text-4xl font-extrabold'>
-            Hola, soy{' '}
-            <span className='bg-gradient-to-r from-accent to-primary bg-clip-text  font-extrabold text-transparent'>
-              Carlos Pulido
-            </span>
+          <h1 ref={title} className=' text-pretty text-base-content text-4xl font-extrabold'>
+            Hola, soy  Carlos Pulido
           </h1>
-          <h2 className='text-2xl text-base-content font-medium py-4'>
+          <h2 ref={subtitle} className='text-2xl text-base-content font-medium py-4'>
             Desarrollador Web Frontend
           </h2>
-          <div className='card-actions motion-safe:animate-pulse'>
-            <Link href='/about' className='btn btn-primary'>
+          <div className='card-actions'>
+            <Link ref={linkButton} href='/about' className='btn btn-primary'>
               Conóceme
             </Link>
           </div>
