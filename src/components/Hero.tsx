@@ -89,7 +89,7 @@ export default function Hero() {
         </div>
 
         <div className='flex  w-[180px] md:w-full self-center gap-4 justify-center items-stretch  flex-wrap flex-col md:flex-row'>
-          <Link
+          <a
             href={'/Carlos_Pulido_CV_ES_.pdf'}
             target='_blank'
             rel='noopener noreferrer'
@@ -99,8 +99,8 @@ export default function Hero() {
               <DownloadIcon />
               Descargar CV
             </button>
-          </Link>
-          <Link
+          </a>
+          <a
             href={'mailto:carlosfrontend@hotmail.com'}
             rel='noopener noreferrer'
           >
@@ -108,7 +108,7 @@ export default function Hero() {
               <EmailIcon />
               Enviar Email
             </button>
-          </Link>
+          </a>
           <CopyEmailButton>Copiar Email</CopyEmailButton>
           <Stats />
         </div>

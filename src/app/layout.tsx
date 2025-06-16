@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
+import dynamic from 'next/dynamic'
 
 
 const inter = Inter_Tight({
@@ -28,8 +29,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const CrispWithNoSSR = dynamic(
+    () => import('../components/Crisp')
+  )
+
   return (
     <html lang="es" suppressHydrationWarning>
+      <CrispWithNoSSR />
       <body className={`${inter.className}  antialiased min-h-dvh grid-rows-[auto_1fr_auto]`}>
         <ToastContainer />
         <ThemeProvider
