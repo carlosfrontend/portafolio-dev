@@ -13,14 +13,14 @@ import { useRef } from 'react';
 
 
 export default function Hero() {
-  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(useGSAP, SplitText);
   const title = useRef<HTMLDivElement>(null);
   const subtitle = useRef<HTMLDivElement>(null);
   const linkButton = useRef<HTMLAnchorElement>(null);
   const tl = gsap.timeline(
     {
       defaults: {
-        duration: 1,
+        duration: 0.5,
       },
     }
   );
@@ -30,22 +30,23 @@ export default function Hero() {
     const splitTextSubtitle = SplitText.create(subtitle.current, { type: "words" });
     tl.from(splitTextTitle.words, {
       y: 10,
-      stagger: 0.2,
       autoAlpha: 0,
+      stagger: 0.2,
       filter: 'blur(10px)'
     }).from(
       splitTextSubtitle.words, {
       y: 8,
-      stagger: 0.2,
       autoAlpha: 0,
+      stagger: 0.2,
       filter: 'blur(10px)'
-    }, "1"
+    }, "+=0.2"
     ).from(linkButton.current, {
-      duration: 2,
       scale: 1.1,
       stagger: 0.2,
       autoAlpha: 0,
-    }, "2");
+      z: -10
+    }, "+=0.2");
+
   });
 
   return (
