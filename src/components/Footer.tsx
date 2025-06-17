@@ -5,11 +5,12 @@ import React from 'react';
 export default function Footer() {
 
   return (
-    <footer className='footer sm:footer-horizontal bg-base-100   text-base-content items-center p-4 shadow-md '>
-      <aside className='grid-flow-col items-center'>
-        <p>Hecho por Carlos Pulido en {new Date().getFullYear()}  </p>
+    <footer className='footer flex sm:footer-horizontal bg-base-100   text-base-content items-center justify-center gap-6 p-10 shadow-md shadow-primary flex-col'>
+      <aside className='flex flex-col items-center'>
+        <p className='text-base-content/80'>Desarrollado por Carlos Pulido</p>
+        <p className='text-base-content/80'>en {new Date().getFullYear()}</p>
       </aside>
-      <nav className='grid-flow-col gap-4 md:place-self-center md:justify-self-center'>
+      <nav className='flex self-center gap-6'>
         {
           SOCIAL_LINKS.map(({ href, icon, srTitle }) => (
             <a
