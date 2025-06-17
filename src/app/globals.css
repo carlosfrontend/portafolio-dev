@@ -6,7 +6,7 @@
     business --prefersdark;
   root: ':root';
   include:;
-  exclude:;
+  exclude: radial-progress;
   prefix:;
   logs: true;
 }
