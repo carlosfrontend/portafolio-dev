@@ -6,9 +6,9 @@
     business --prefersdark;
   root: ':root';
   include:;
-  exclude: radial-progress;
+  exclude:;
   prefix:;
-  logs: true;
+  logs: false;
 }
 @custom-variant dark (&:where([data-theme=business], [data-theme=business] *));
 html {
