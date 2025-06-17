@@ -50,7 +50,7 @@ export default function AboutPage() {
 
                 <article ref={container1}>
                     <h3 className='md:divider text-center py-10 text-3xl md:text:4xl text-accent font-bold'>Introducción</h3>
-                    <div className='prose prose-xl lg:prose-xl text-pretty text-justify  p-4'>
+                    <div className='prose prose-xl lg:prose-xl text-pretty text-justify  p-6'>
                         <p>¡Hola!, muchas gracias por pasarte por mi rincón en la web.</p>
                         <p>
                             Aunque vengo de sector administrativo, hace un tiempo descubrí mi verdadera pasión por el desarrollo <strong>frontend</strong>.
