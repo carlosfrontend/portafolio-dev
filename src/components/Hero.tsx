@@ -17,35 +17,40 @@ export default function Hero() {
   const title = useRef<HTMLDivElement>(null);
   const subtitle = useRef<HTMLDivElement>(null);
   const linkButton = useRef<HTMLAnchorElement>(null);
-  const tl = gsap.timeline(
-    {
-      defaults: {
-        duration: 0.5,
-      },
-    }
-  );
+
 
   useGSAP(() => {
-    const splitTextTitle = SplitText.create(title.current, { type: "words" });
-    const splitTextSubtitle = SplitText.create(subtitle.current, { type: "words" });
-    tl.from(splitTextTitle.words, {
-      y: 10,
-      autoAlpha: 0,
-      stagger: 0.2,
-      filter: 'blur(10px)'
-    }).from(
-      splitTextSubtitle.words, {
-      y: 8,
-      autoAlpha: 0,
-      stagger: 0.2,
-      filter: 'blur(10px)'
-    }, "+=0.2"
-    ).from(linkButton.current, {
-      scale: 1.1,
-      stagger: 0.2,
-      autoAlpha: 0,
-      z: -10
-    }, "+=0.2");
+    document.fonts.ready.then(() => {
+      const splitTextTitle = SplitText.create(title.current, { type: "words" });
+      const splitTextSubtitle = SplitText.create(subtitle.current, { type: "words" });
+      gsap.from(splitTextTitle.words, {
+        y: 10,
+        autoAlpha: 0,
+        stagger: 0.2,
+        filter: 'blur(10px)',
+        duration: 1
+      })
+
+      gsap.from(
+        splitTextSubtitle.words, {
+        y: 8,
+        autoAlpha: 0,
+        stagger: 0.2,
+        filter: 'blur(10px)',
+        delay: 1
+      }
+      )
+      gsap.from(linkButton.current, {
+        scale: 1.1,
+        opacity: 0,
+        delay: 2
+      })
+      gsap.to(linkButton.current, {
+        scale: 1,
+        opacity: 1,
+        delay: 2
+      })
+    })
 
   });
 
