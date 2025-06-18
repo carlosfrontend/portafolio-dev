@@ -26,6 +26,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5",
+    "react-is": "^19.1.0",
     "react-toastify": "^11.0.5",
     "sanity": "^3.93.0",
     "styled-components": "^6.1.19",
