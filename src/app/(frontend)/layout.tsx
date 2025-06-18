@@ -5,7 +5,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
+import { SanityLive } from '@/sanity/lib/live';
 
 
 const inter = Inter_Tight({
@@ -31,7 +32,7 @@ export default function RootLayout({
 }>) {
 
   const CrispWithNoSSR = dynamic(
-    () => import('../components/Crisp')
+    () => import('../../components/Crisp'),
   )
 
   return (
@@ -49,6 +50,7 @@ export default function RootLayout({
           <Navbar />
           <main className="min-h-dvh">
             {children}
+            <SanityLive />
           </main>
           <Footer />
         </ThemeProvider>
