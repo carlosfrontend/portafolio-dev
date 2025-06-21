@@ -12,7 +12,7 @@ import { SplitText } from 'gsap/SplitText';
 import { useRef } from 'react';
 
 
-export default function Hero() {
+export default function Hero({ blogCount }: { blogCount: number }) {
   gsap.registerPlugin(useGSAP, SplitText);
   const title = useRef<HTMLDivElement>(null);
   const subtitle = useRef<HTMLDivElement>(null);
@@ -115,7 +115,7 @@ export default function Hero() {
             </button>
           </a>
           <CopyEmailButton>Copiar Email</CopyEmailButton>
-          <Stats />
+          <Stats blogCount={blogCount} />
         </div>
       </div>
     </div>
