@@ -13,7 +13,7 @@ import { ImageIcon, CodeIcon } from '@sanity/icons'
  */
 
 export const blockContentType = defineType({
-  title: 'Block Content',
+  title: 'Bloque de Contenido',
   name: 'blockContent',
   type: 'array',
   of: [
@@ -29,16 +29,16 @@ export const blockContentType = defineType({
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
         { title: 'H4', value: 'h4' },
-        { title: 'Quote', value: 'blockquote' },
+        { title: 'Cita', value: 'blockquote' },
       ],
-      lists: [{ title: 'Bullet', value: 'bullet' }, { title: 'Number', value: 'number' }],
+      lists: [{ title: 'Lista desordenada', value: 'bullet' }, { title: 'Lista ordenada', value: 'number' }],
       // Marks let you mark up inline text in the Portable Text Editor
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting
         decorators: [
-          { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' },
+          { title: 'Negrita', value: 'strong' },
+          { title: 'Cursiva', value: 'em' },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -62,20 +62,21 @@ export const blockContentType = defineType({
     // as a block type.
     defineArrayMember({
       type: 'image',
+      title: 'Imágen',
       icon: ImageIcon,
       options: { hotspot: true },
       fields: [
         {
           name: 'alt',
           type: 'string',
-          title: 'Alternative Text',
+          title: 'Texto Alternativo',
         }
       ]
     }),
     defineArrayMember({
       type: 'code',
       icon: CodeIcon,
-      title: 'Code block',
+      title: 'Bloque de Código',
       options: {
         withFilename: true, // Permite agregar nombre de archivo
         theme: 'github',    // Tema para resaltado (puedes cambiarlo)

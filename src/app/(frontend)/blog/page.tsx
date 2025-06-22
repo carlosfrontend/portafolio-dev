@@ -10,8 +10,10 @@ export default async function Page() {
     return (
         <div className="">
             <header className="grid grid-auto-rows-auto place-items-center gap-5 md:gap-10 p-6 md:p-12">
-                <PostTitle>CodeSpacio</PostTitle>
-                <PostSubitle>Un espacio de programación</PostSubitle>
+                <div className="flex flex-col items-center">
+                    <PostTitle>CodeSpacio</PostTitle>
+                    <PostSubitle>Un espacio de programación</PostSubitle>
+                </div>
             </header>
             <div className="grid grid-auto-rows-auto  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-10 md:gap-14 p-6 md:p-12 mb-16">
                 {posts.map((post) => (
