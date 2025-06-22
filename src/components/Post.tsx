@@ -26,10 +26,10 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
             {mainImage ? (
                 <figure className="relative w-full h-64 sm:h-80 lg:h-96 mb-6 overflow-hidden rounded-lg shadow-lg">
                     <Image
-                        src={urlFor(mainImage).width(1200).height(800).url()}
+                        src={urlFor(mainImage).width(800).height(600).url()}
                         alt="Post Image"
-                        width={1200}
-                        height={800}
+                        width={800}
+                        height={600}
                         className="transition-transform duration-300 transform hover:scale-105 object-cover w-full h-full"
                         priority={false}
                     />

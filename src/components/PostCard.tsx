@@ -10,7 +10,7 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
     const { title, author, mainImage, publishedAt, categories } = props
 
     return (
-        <Link className="card shadow-md shadow-base-content/5 bg-transparent transform hover:scale-105 transition-all duration-300 ease-in-out group" href={`/blog/${props.slug!.current}`}>
+        <Link className="card drop-shadow-xs drop-shadow-base-content transform bg-base-200 hover:scale-105 transition-all duration-300 ease-in-out group " href={`/blog/${props.slug!.current}`}>
             <article className="flex flex-col gap-4 justify-start items-start p-6">
                 <div className="py-6">
                     <PostCategories categories={categories} />
