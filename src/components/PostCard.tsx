@@ -10,17 +10,16 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
     const { title, author, mainImage, publishedAt, categories } = props
 
     return (
-        <Link className="group" href={`/blog/${props.slug!.current}`}>
-            <article className="flex flex-col-reverse gap-4 md:grid md:grid-cols-12 md:gap-0">
-                <div className="md:col-span-2 md:pt-1">
+        <Link className="card shadow-sm shadow-base-content/10 bg-transparent transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-lg group" href={`/blog/${props.slug!.current}`}>
+            <article className="flex flex-col gap-4 justify-start items-start p-6">
+                <div className="py-6">
                     <PostCategories categories={categories} />
                 </div>
-                <div className="md:col-span-5 md:w-full">
-                    <h2 className="text-2xl text-pretty font-semibold text-accent group-hover:text-base-accent transition-colors relative">
-                        <span className="relative z-[1]">{title}</span>
-                        <span className="bg-pink-50 z-0 absolute inset-0 rounded-lg opacity-0 transition-all group-hover:opacity-100 group-hover:scale-y-110 group-hover:scale-x-105 scale-75" />
+                <div>
+                    <h2 className="py-2">
+                        <span>{title}</span>
                     </h2>
-                    <div className="flex items-center mt-2 md:mt-6 gap-x-6">
+                    <div className="py-2">
                         <PostAuthor author={author} />
                         <PostPublishedAt publishedAt={publishedAt} />
                     </div>
@@ -32,6 +31,7 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
                             width={400}
                             height={200}
                             alt={mainImage.alt || title || ''}
+                            className='transition-transform duration-300 transform ease-in-out hover:scale-120'
                         />
                     ) : null}
                 </div>

@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <CrispWithNoSSR />
-      <body className={`${inter.className}  antialiased min-h-dvh grid-rows-[auto_1fr_auto]`}>
+      <body className={`${inter.className}  antialiased min-h-dvh `}>
         <ToastContainer />
         <ThemeProvider
           attribute="data-theme"

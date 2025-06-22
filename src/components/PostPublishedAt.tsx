@@ -8,7 +8,7 @@ type PublishedAtProps = {
 
 export function PostPublishedAt({ publishedAt }: PublishedAtProps) {
     return publishedAt ? (
-        <p className="text-base-content/80">
+        <p className="text-base-content/80 px-4 py-6">
             {dayjs(publishedAt).locale('es').format('D MMM YYYY')}
         </p>
     ) : null

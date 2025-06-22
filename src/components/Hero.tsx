@@ -56,7 +56,7 @@ export default function Hero({ blogCount }: { blogCount: number }) {
 
   return (
     <div className='relative top-0 min-h-dvh flex justify-center items-center bg-none md:bg-base-200'>
-      <div className=' w-96 md:w-[480px] flex flex-col justify-between mdshadow-md bg-none shadow-none md:bg-base-100'>
+      <div className=' w-96 md:w-[480px] flex flex-col justify-between md:shadow-md bg-none shadow-none md:bg-base-100'>
 
         <a
           href={'https://www.linkedin.com/in/carlosfrontend/'}

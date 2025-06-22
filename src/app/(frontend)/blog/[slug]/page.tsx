@@ -15,8 +15,6 @@ export default async function Page({
     }
 
     return (
-        <main className="container mx-auto grid grid-cols-1 gap-6 p-12">
-            <Post {...post} />
-        </main>
+        <Post {...post} />
     )
 }

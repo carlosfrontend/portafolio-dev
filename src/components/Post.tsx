@@ -7,14 +7,16 @@ import { PostPublishedAt } from "@/components/PostPublishedAt";
 import { PostTitle } from "@/components/PostTitle";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Post(props: NonNullable<POST_QUERYResult>) {
     const { title, author, mainImage, body, publishedAt, categories } = props;
 
     return (
-        <article className="grid lg:grid-cols-12 gap-y-12">
-            <header className="lg:col-span-12 flex flex-col gap-4 items-start">
-                <div className="flex gap-4 items-center">
+        <article className="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8">
+            <header className="mb-6">
+                <Link href="/blog" className="btn btn-soft transform bg-accent text-accent-content hover:scale-105 transition-all duration-300 ease-in-out"><span className="mr-2">&laquo;</span> <span>Volver</span></Link>
+                <div className="flex flex-wrap gap-4 items-center">
                     <PostCategories categories={categories} />
                     <PostPublishedAt publishedAt={publishedAt} />
                 </div>
@@ -22,17 +24,19 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
                 <PostAuthor author={author} />
             </header>
             {mainImage ? (
-                <figure className="lg:col-span-4 flex flex-col gap-2 items-start">
+                <figure className="relative w-full h-64 sm:h-80 lg:h-96 mb-6 overflow-hidden rounded-lg shadow-lg">
                     <Image
-                        src={urlFor(mainImage).width(400).height(400).url()}
-                        width={400}
-                        height={400}
-                        alt=""
+                        src={urlFor(mainImage).width(1200).height(800).url()}
+                        alt="Post Image"
+                        width={1200}
+                        height={800}
+                        className="transition-transform duration-300 transform hover:scale-105 object-cover w-full h-full"
+                        priority={false}
                     />
                 </figure>
             ) : null}
             {body ? (
-                <div className="lg:col-span-7 lg:col-start-6 prose lg:prose-lg">
+                <div className="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl mx-auto">
                     <PortableText value={body} components={components} />
                 </div>
             ) : null}

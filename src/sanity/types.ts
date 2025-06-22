@@ -56,7 +56,7 @@ export type Post = {
       _key: string;
     }>;
     style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
-    listItem?: "bullet";
+    listItem?: "bullet" | "number";
     markDefs?: Array<{
       href?: string;
       _type: "link";
@@ -78,7 +78,9 @@ export type Post = {
     alt?: string;
     _type: "image";
     _key: string;
-  }>;
+  } | {
+    _key: string;
+  } & Code>;
 };
 
 export type Author = {
@@ -140,7 +142,7 @@ export type BlockContent = Array<{
     _key: string;
   }>;
   style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
-  listItem?: "bullet";
+  listItem?: "bullet" | "number";
   markDefs?: Array<{
     href?: string;
     _type: "link";
@@ -162,7 +164,17 @@ export type BlockContent = Array<{
   alt?: string;
   _type: "image";
   _key: string;
-}>;
+} | {
+  _key: string;
+} & Code>;
+
+export type Code = {
+  _type: "code";
+  language?: string;
+  filename?: string;
+  code?: string;
+  highlightedLines?: Array<number>;
+};
 
 export type SanityImagePaletteSwatch = {
   _type: "sanity.imagePaletteSwatch";
@@ -282,7 +294,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = Post | Author | Category | BlockContent | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = Post | Author | Category | BlockContent | Code | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: POSTS_QUERY
@@ -292,6 +304,8 @@ export type POSTS_QUERYResult = Array<{
   title: string | null;
   slug: Slug | null;
   body: Array<{
+    _key: string;
+  } & Code | {
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -299,7 +313,7 @@ export type POSTS_QUERYResult = Array<{
       _key: string;
     }>;
     style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
-    listItem?: "bullet";
+    listItem?: "bullet" | "number";
     markDefs?: Array<{
       href?: string;
       _type: "link";
@@ -368,6 +382,8 @@ export type POST_QUERYResult = {
   _id: string;
   title: string | null;
   body: Array<{
+    _key: string;
+  } & Code | {
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -375,7 +391,7 @@ export type POST_QUERYResult = {
       _key: string;
     }>;
     style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
-    listItem?: "bullet";
+    listItem?: "bullet" | "number";
     markDefs?: Array<{
       href?: string;
       _type: "link";
