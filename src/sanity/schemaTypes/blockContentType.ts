@@ -1,17 +1,6 @@
 import { defineType, defineArrayMember } from 'sanity'
 import { ImageIcon, CodeIcon } from '@sanity/icons'
 
-/**
- * This is the schema type for block content used in the post document type
- * Importing this type into the studio configuration's `schema` property
- * lets you reuse it in other document types with:
- *  {
- *    name: 'someName',
- *    title: 'Some title',
- *    type: 'blockContent'
- *  }
- */
-
 export const blockContentType = defineType({
   title: 'Bloque de Contenido',
   name: 'blockContent',
@@ -19,10 +8,6 @@ export const blockContentType = defineType({
   of: [
     defineArrayMember({
       type: 'block',
-      // Styles let you define what blocks can be marked up as. The default
-      // set corresponds with HTML tags, but you can set any title or value
-      // you want, and decide how you want to deal with it where you want to
-      // use your content.
       styles: [
         { title: 'Normal', value: 'normal' },
         { title: 'H1', value: 'h1' },
@@ -32,34 +17,32 @@ export const blockContentType = defineType({
         { title: 'Cita', value: 'blockquote' },
       ],
       lists: [{ title: 'Lista desordenada', value: 'bullet' }, { title: 'Lista ordenada', value: 'number' }],
-      // Marks let you mark up inline text in the Portable Text Editor
       marks: {
-        // Decorators usually describe a single property – e.g. a typographic
-        // preference or highlighting
         decorators: [
           { title: 'Negrita', value: 'strong' },
           { title: 'Cursiva', value: 'em' },
+          { title: 'Subrayado', value: 'underline' },
+          { title: 'Código en línea', value: 'code' },
         ],
-        // Annotations can be any object structure – e.g. a link or a footnote.
+
         annotations: [
           {
             title: 'URL',
             name: 'link',
             type: 'object',
             fields: [
+              { title: 'URL', name: 'href', type: 'url' },
               {
-                title: 'URL',
-                name: 'href',
-                type: 'url',
+                title: 'Abrir en nueva pestaña',
+                name: 'blank',
+                type: 'boolean',
+                initialValue: true,
               },
             ],
           },
         ],
       },
     }),
-    // You can add additional types here. Note that you can't use
-    // primitive types such as 'string' and 'number' in the same array
-    // as a block type.
     defineArrayMember({
       type: 'image',
       title: 'Imágen',
@@ -78,8 +61,8 @@ export const blockContentType = defineType({
       icon: CodeIcon,
       title: 'Bloque de Código',
       options: {
-        withFilename: true, // Permite agregar nombre de archivo
-        theme: 'github',    // Tema para resaltado (puedes cambiarlo)
+        withFilename: true,
+        theme: 'github',
         languageAlternatives: [
           { title: 'JavaScript', value: 'javascript' },
           { title: 'TypeScript', value: 'typescript' },
@@ -94,5 +77,17 @@ export const blockContentType = defineType({
         ],
       },
     }),
+    {
+      name: 'videoEmbed',
+      type: 'object',
+      title: 'Video embebido',
+      fields: [
+        {
+          name: 'url',
+          type: 'url',
+          title: 'URL del video (YouTube, Vimeo, etc.)'
+        }
+      ]
+    }
   ],
 })

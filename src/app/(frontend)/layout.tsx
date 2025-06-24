@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
 
   const CrispWithNoSSR = dynamic(
-    () => import('../components/Crisp'),
+    () => import('../../components/Crisp'),
   )
 
   return (

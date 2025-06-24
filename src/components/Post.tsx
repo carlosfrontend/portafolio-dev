@@ -15,7 +15,7 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
     return (
         <article className="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8">
             <header className="mb-6">
-                <Link href="/blog" className="btn btn-soft transform bg-accent text-accent-content hover:scale-105 transition-all duration-300 ease-in-out"><span className="mr-2">&laquo;</span> <span>Volver</span></Link>
+                <Link href="/blog" className="btn btn-soft transform bg-secondary text-accent-content hover:scale-105 transition-all duration-300 ease-in-out"><span className="mr-2">&laquo;</span> <span>Volver</span></Link>
                 <div className="flex flex-wrap gap-4 items-center">
                     <PostCategories categories={categories} />
                     <PostPublishedAt publishedAt={publishedAt} />

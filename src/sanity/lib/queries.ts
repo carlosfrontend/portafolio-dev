@@ -47,3 +47,32 @@ export const POST_QUERY =
     image
   }
 }`)
+
+export const PROJECTS_QUERY = defineQuery(`
+  *[_type == "project" && defined(slug.current)] | order(_createdAt desc) {
+    _id,
+    title,
+    slug,
+    mainImage,
+    description,
+    tags
+  }
+`);
+
+export const PROJECTS_SLUGS_QUERY = defineQuery(`
+  *[_type == "project" && defined(slug.current)] {
+    "slug": slug.current
+  }
+`);
+
+export const PROJECT_QUERY = defineQuery(`*[_type == "project" && slug.current == $slug][0]{
+  _id,
+  title,
+  body,
+  mainImage,
+  description,
+  githubUrl,
+  previewUrl,
+  tags,
+  slug
+}`);

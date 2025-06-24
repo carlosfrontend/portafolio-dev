@@ -13,6 +13,71 @@
  */
 
 // Source: schema.json
+export type Project = {
+  _id: string;
+  _type: "project";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  mainImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
+  description?: string;
+  previewUrl?: string;
+  githubUrl?: string;
+  body?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      blank?: boolean;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  } | {
+    _key: string;
+  } & Code | {
+    url?: string;
+    _type: "videoEmbed";
+    _key: string;
+  }>;
+  tags?: Array<string>;
+};
+
 export type Post = {
   _id: string;
   _type: "post";
@@ -59,6 +124,7 @@ export type Post = {
     listItem?: "bullet" | "number";
     markDefs?: Array<{
       href?: string;
+      blank?: boolean;
       _type: "link";
       _key: string;
     }>;
@@ -80,7 +146,11 @@ export type Post = {
     _key: string;
   } | {
     _key: string;
-  } & Code>;
+  } & Code | {
+    url?: string;
+    _type: "videoEmbed";
+    _key: string;
+  }>;
 };
 
 export type Author = {
@@ -145,6 +215,7 @@ export type BlockContent = Array<{
   listItem?: "bullet" | "number";
   markDefs?: Array<{
     href?: string;
+    blank?: boolean;
     _type: "link";
     _key: string;
   }>;
@@ -166,7 +237,11 @@ export type BlockContent = Array<{
   _key: string;
 } | {
   _key: string;
-} & Code>;
+} & Code | {
+  url?: string;
+  _type: "videoEmbed";
+  _key: string;
+}>;
 
 export type Code = {
   _type: "code";
@@ -294,7 +369,7 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = Post | Author | Category | BlockContent | Code | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = Project | Post | Author | Category | BlockContent | Code | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: POSTS_QUERY
@@ -316,6 +391,7 @@ export type POSTS_QUERYResult = Array<{
     listItem?: "bullet" | "number";
     markDefs?: Array<{
       href?: string;
+      blank?: boolean;
       _type: "link";
       _key: string;
     }>;
@@ -334,6 +410,10 @@ export type POSTS_QUERYResult = Array<{
     crop?: SanityImageCrop;
     alt?: string;
     _type: "image";
+    _key: string;
+  } | {
+    url?: string;
+    _type: "videoEmbed";
     _key: string;
   }> | null;
   mainImage: {
@@ -394,6 +474,7 @@ export type POST_QUERYResult = {
     listItem?: "bullet" | "number";
     markDefs?: Array<{
       href?: string;
+      blank?: boolean;
       _type: "link";
       _key: string;
     }>;
@@ -412,6 +493,10 @@ export type POST_QUERYResult = {
     crop?: SanityImageCrop;
     alt?: string;
     _type: "image";
+    _key: string;
+  } | {
+    url?: string;
+    _type: "videoEmbed";
     _key: string;
   }> | null;
   mainImage: {
@@ -449,6 +534,95 @@ export type POST_QUERYResult = {
     } | null;
   } | null;
 } | null;
+// Variable: PROJECTS_QUERY
+// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc) {    _id,    title,    slug,    mainImage,    description,    tags  }
+export type PROJECTS_QUERYResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  description: string | null;
+  tags: Array<string> | null;
+}>;
+// Variable: PROJECTS_SLUGS_QUERY
+// Query: *[_type == "project" && defined(slug.current)] {    "slug": slug.current  }
+export type PROJECTS_SLUGS_QUERYResult = Array<{
+  slug: string | null;
+}>;
+// Variable: PROJECT_QUERY
+// Query: *[_type == "project" && slug.current == $slug][0]{  _id,  title,  body,  mainImage,  description,  githubUrl,  previewUrl,  tags,  slug}
+export type PROJECT_QUERYResult = {
+  _id: string;
+  title: string | null;
+  body: Array<{
+    _key: string;
+  } & Code | {
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      blank?: boolean;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+    _key: string;
+  } | {
+    url?: string;
+    _type: "videoEmbed";
+    _key: string;
+  }> | null;
+  mainImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  description: string | null;
+  githubUrl: string | null;
+  previewUrl: string | null;
+  tags: Array<string> | null;
+  slug: Slug | null;
+} | null;
 
 // Query TypeMap
 import "@sanity/client";
@@ -457,5 +631,8 @@ declare module "@sanity/client" {
     "*[_type == \"post\" && defined(slug.current)]|order(publishedAt desc)[0...12]{\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POSTS_QUERYResult;
     "*[_type == \"post\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": POSTS_SLUGS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POST_QUERYResult;
+    "\n  *[_type == \"project\" && defined(slug.current)] | order(_createdAt desc) {\n    _id,\n    title,\n    slug,\n    mainImage,\n    description,\n    tags\n  }\n": PROJECTS_QUERYResult;
+    "\n  *[_type == \"project\" && defined(slug.current)] {\n    \"slug\": slug.current\n  }\n": PROJECTS_SLUGS_QUERYResult;
+    "*[_type == \"project\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  description,\n  githubUrl,\n  previewUrl,\n  tags,\n  slug\n}": PROJECT_QUERYResult;
   }
 }
