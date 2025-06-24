@@ -8,9 +8,11 @@ import { PostTitle } from "@/components/PostTitle";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
+import { getBlurDataUrl } from "@/sanity/lib/image";
 
 export function Post(props: NonNullable<POST_QUERYResult>) {
     const { title, author, mainImage, body, publishedAt, categories } = props;
+    const blurDataUrl = mainImage ? getBlurDataUrl(mainImage) : undefined
 
     return (
         <article className="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8">
@@ -32,6 +34,8 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
                         height={600}
                         className="transition-transform duration-300 transform hover:scale-105 object-cover w-full h-full"
                         priority={false}
+                        placeholder="blur"
+                        blurDataURL={blurDataUrl}
                     />
                 </figure>
             ) : null}

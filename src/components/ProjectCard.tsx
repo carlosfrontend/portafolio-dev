@@ -1,10 +1,11 @@
 import { PROJECTS_QUERYResult } from '@/sanity/types'
-import { urlFor } from '@/sanity/lib/image'
+import { urlFor, getBlurDataUrl } from '@/sanity/lib/image'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
     const { title, mainImage, slug, description, tags } = props
+    const blurDataUrl = mainImage ? getBlurDataUrl(mainImage) : undefined;
 
     return (
         <Link
@@ -36,6 +37,9 @@ export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
                             height={200}
                             alt={mainImage.alt || title || ''}
                             className="transition-transform duration-300 transform ease-in-out group-hover:scale-110 object-cover w-full"
+                            priority={false}
+                            placeholder='blur'
+                            blurDataURL={blurDataUrl}
                         />
                     </div>
                 )}

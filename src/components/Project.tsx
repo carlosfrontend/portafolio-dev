@@ -5,9 +5,11 @@ import { PROJECT_QUERYResult } from "@/sanity/types"
 import { urlFor } from "@/sanity/lib/image"
 import Image from "next/image"
 import Link from "next/link"
+import { getBlurDataUrl } from "@/sanity/lib/image"
 
 export function Project(props: NonNullable<PROJECT_QUERYResult>) {
     const { title, mainImage, body, description, githubUrl, previewUrl, tags } = props
+    const blurDataUrl = mainImage ? getBlurDataUrl(mainImage) : undefined
 
     return (
         <article className="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8">
@@ -67,6 +69,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
                         height={600}
                         className="transition-transform duration-300 transform hover:scale-105 object-cover w-full h-full"
                         priority={false}
+                        blurDataURL={blurDataUrl}
                     />
                 </figure>
             )}

@@ -5,9 +5,11 @@ import { PostPublishedAt } from '@/components/PostPublishedAt'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 import Link from 'next/link'
+import { getBlurDataUrl } from '@/sanity/lib/image'
 
 export function PostCard(props: POSTS_QUERYResult[0]) {
     const { title, author, mainImage, publishedAt, categories } = props
+    const blurDataUrl = mainImage ? getBlurDataUrl(mainImage) : undefined
 
     return (
         <Link className="card hover:border hover:border-base-content transform bg-base-200 hover:scale-105 transition-all duration-300 ease-in-out group " href={`/blog/${props.slug!.current}`}>
@@ -32,6 +34,8 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
                             height={200}
                             alt={mainImage.alt || title || ''}
                             className='transition-transform duration-300 transform ease-in-out group-hover:scale-120'
+                            placeholder="blur"
+                            blurDataURL={blurDataUrl}
                         />
                     ) : null}
                 </div>
