@@ -3,7 +3,7 @@ import React from 'react'
 import BriefCaseIcon from './icons/BriefCase'
 import { SparklesIcon } from './icons/SparklesIcon'
 
-export default function Stats({ blogCount }: { blogCount: number }) {
+export default function Stats({ blogCount, projectCount }: { blogCount: number, projectCount: number }) {
 
     return (
         <div className=' py-10 flex justify-start gap-4  items-stretch flex-wrap w-full md:justify-center md:gap-2'>
@@ -11,7 +11,7 @@ export default function Stats({ blogCount }: { blogCount: number }) {
                 <div className="shadow">
                     <div className="stat w-full gap-2 md:w-[200px] bg-base-100 overflow-hidden text-primary">
                         <div className="text-base-content ">Proyectos recientes</div>
-                        <div className="stat-value  text-base-content flex justify-around items-center">4 <BriefCaseIcon />
+                        <div className="stat-value  text-base-content flex justify-around items-center">{projectCount} <BriefCaseIcon />
                         </div>
                         <div className="stat-desc group-hover:text-base-content">21% más que el mes pasado</div>
                     </div>
