@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
             title: 'Sobre Carlos Pulido | Frontend Dev',
             description: 'Descubre el perfil profesional de Carlos Pulido, desarrollador frontend. Trayectoria, habilidades y pasión por la web.',
             creator: '@CarlosFrontEnd',
-            images: ['https://carlospulido-portafolio.vercel.app/images/twitter-image-about.jpg'],
+            images: ['https://carlospulido-portafolio.vercel.app/images/og-image-about.png'],
         },
         alternates: {
             canonical: 'https://carlospulido-portafolio.vercel.app/about',
