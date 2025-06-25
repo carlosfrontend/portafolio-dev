@@ -21,8 +21,50 @@ const inter = Inter_Tight({
 
 
 export const metadata: Metadata = {
-  title: "Portafolio de Carlos Pulido - Desarrollador Web Frontend",
-  description: "Explora el portafolio de Carlos Pulido, desarrollador web frontend. Descubre proyectos que demuestran experiencia en la creación de interfaces de usuario modernas y responsivas."
+  title: "Carlos Pulido | Desarrollador Frontend - Portafolio y Blog",
+  description: "Explora el portafolio de Carlos Pulido, un desarrollador frontend especializado en crear interfaces de usuario modernas y experiencias web interactivas. Descubre proyectos innovadores y artículos sobre desarrollo.",
+
+  alternates: {
+    canonical: 'https://carlospulido-portafolio.vercel.app',
+  },
+
+  authors: [{ name: 'Carlos Pulido' }],
+
+  keywords: [
+    'Carlos Pulido',
+    'Desarrollador Frontend',
+    'Portafolio',
+    'Programador Web',
+    'React',
+    'Next.js',
+    'JavaScript',
+    'HTML',
+    'CSS',
+    'GSAP',
+    'Diseño Web',
+    'Desarrollo Web',
+    'UX/UI',
+    'Blog de desarrollo',
+    'España',
+    'TypeScript'
+  ],
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-snippet': -1,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+    },
+  },
+
+
+  metadataBase: new URL('https://carlospulido-portafolio.vercel.app'),
 };
 
 export default function RootLayout({
