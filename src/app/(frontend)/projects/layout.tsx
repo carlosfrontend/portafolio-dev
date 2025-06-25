@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
             title: 'Proyectos de Carlos Pulido | Frontend Dev',
             description: 'Echa un vistazo a los proyectos destacados de Carlos Pulido, un desarrollador frontend experto en crear experiencias web modernas.',
             creator: '@CarlosFrontEnd',
-            images: ['https://carlospulido-portafolio.vercel.app/images/twitter-image-proyectos.jpg'],
+            images: ['https://carlospulido-portafolio.vercel.app/images/og-image-proyectos.png'],
         },
 
         alternates: {

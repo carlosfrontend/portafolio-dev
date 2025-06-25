@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
             title: 'Blog Frontend de Carlos Pulido',
             description: 'Últimas noticias, tutoriales y reflexiones sobre desarrollo web frontend y tecnología por Carlos Pulido.',
             creator: '@CarlosFrontEnd',
-            images: ['https://carlospulido-portafolio.vercel.app/images/twitter-image-blog.jpg'],
+            images: ['https://carlospulido-portafolio.vercel.app/images/og-image-blog.jpg'],
         },
 
         alternates: {
