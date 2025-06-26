@@ -74,5 +74,5 @@ export const PROJECT_QUERY = defineQuery(`*[_type == "project" && slug.current =
   githubUrl,
   previewUrl,
   tags,
-  slug
+  slug,
 }`);

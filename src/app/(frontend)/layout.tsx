@@ -7,6 +7,9 @@ import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
 import dynamic from 'next/dynamic';
 import { SanityLive } from '@/sanity/lib/live';
+import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity";
+import { DisableDraftMode } from "@/components/DisableDraftMode";
 
 
 const inter = Inter_Tight({
@@ -67,7 +70,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://carlospulido-portafolio.vercel.app'),
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -93,6 +96,12 @@ export default function RootLayout({
           <main className="min-h-dvh">
             {children}
             <SanityLive />
+            {(await draftMode()).isEnabled && (
+              <>
+                <DisableDraftMode />
+                <VisualEditing />
+              </>
+            )}
           </main>
           <Footer />
         </ThemeProvider>

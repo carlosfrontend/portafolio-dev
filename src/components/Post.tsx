@@ -10,8 +10,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { getBlurDataUrl } from "@/sanity/lib/image";
 
+
 export function Post(props: NonNullable<POST_QUERYResult>) {
-    const { title, author, mainImage, body, publishedAt, categories } = props;
+    const {
+        title,
+        author,
+        mainImage,
+        body,
+        publishedAt,
+        categories
+    } = props;
     const blurDataUrl = mainImage ? getBlurDataUrl(mainImage) : undefined
 
     return (

@@ -151,6 +151,13 @@ export type Post = {
     _type: "videoEmbed";
     _key: string;
   }>;
+  relatedPosts?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "post";
+  }>;
 };
 
 export type Author = {
@@ -562,7 +569,7 @@ export type PROJECTS_SLUGS_QUERYResult = Array<{
   slug: string | null;
 }>;
 // Variable: PROJECT_QUERY
-// Query: *[_type == "project" && slug.current == $slug][0]{  _id,  title,  body,  mainImage,  description,  githubUrl,  previewUrl,  tags,  slug}
+// Query: *[_type == "project" && slug.current == $slug][0]{  _id,  title,  body,  mainImage,  description,  githubUrl,  previewUrl,  tags,  slug,}
 export type PROJECT_QUERYResult = {
   _id: string;
   title: string | null;
@@ -633,6 +640,6 @@ declare module "@sanity/client" {
     "*[_type == \"post\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POST_QUERYResult;
     "\n  *[_type == \"project\" && defined(slug.current)] | order(_createdAt desc) {\n    _id,\n    title,\n    slug,\n    mainImage,\n    description,\n    tags\n  }\n": PROJECTS_QUERYResult;
     "\n  *[_type == \"project\" && defined(slug.current)] {\n    \"slug\": slug.current\n  }\n": PROJECTS_SLUGS_QUERYResult;
-    "*[_type == \"project\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  description,\n  githubUrl,\n  previewUrl,\n  tags,\n  slug\n}": PROJECT_QUERYResult;
+    "*[_type == \"project\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  description,\n  githubUrl,\n  previewUrl,\n  tags,\n  slug,\n}": PROJECT_QUERYResult;
   }
 }
