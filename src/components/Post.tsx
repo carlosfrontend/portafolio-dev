@@ -9,16 +9,19 @@ import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
 import Link from "next/link";
 import { getBlurDataUrl } from "@/sanity/lib/image";
+import { RelatedPosts } from "./RelatedPosts";
 
 
 export function Post(props: NonNullable<POST_QUERYResult>) {
     const {
+        _id,
         title,
         author,
         mainImage,
         body,
         publishedAt,
-        categories
+        categories,
+        relatedPosts
     } = props;
     const blurDataUrl = mainImage ? getBlurDataUrl(mainImage) : undefined
 
@@ -50,6 +53,11 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
             {body ? (
                 <div className="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl mx-auto">
                     <PortableText value={body} components={components} />
+                    <RelatedPosts
+                        relatedPosts={relatedPosts}
+                        documentId={_id}
+                        documentType="post"
+                    />
                 </div>
             ) : null}
         </article>
