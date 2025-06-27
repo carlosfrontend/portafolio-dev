@@ -59,7 +59,7 @@ export const POST_QUERY =
 }`)
 
 export const PROJECTS_QUERY = defineQuery(`
-  *[_type == "project" && defined(slug.current)] | order(_createdAt desc) {
+  *[_type == "project" && seo.noIndex != true && defined(slug.current)] | order(_createdAt desc) {
     _id,
     title,
     slug,
@@ -85,4 +85,10 @@ export const PROJECT_QUERY = defineQuery(`*[_type == "project" && slug.current =
   previewUrl,
   tags,
   slug,
+  "seo": {
+    "title": coalesce(seo.title, title, ""),
+    "description": coalesce(seo.description,  ""),
+    "image": seo.image,
+    "noIndex": seo.noIndex == true
+  },
 }`);

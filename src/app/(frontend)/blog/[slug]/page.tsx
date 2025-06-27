@@ -54,7 +54,7 @@ export async function generateMetadata({
 
 }
 
-export default async function Page({ params }: RouteProps) {
+export default async function PostPage({ params }: RouteProps) {
     const { data: post } = await getPost(params);
 
 
@@ -63,8 +63,6 @@ export default async function Page({ params }: RouteProps) {
     }
 
     return (
-        <>
-            <Post {...post} />
-        </>
+        <Post {...post} />
     )
 }

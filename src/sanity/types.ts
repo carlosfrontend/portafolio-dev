@@ -76,6 +76,7 @@ export type Project = {
     _key: string;
   }>;
   tags?: Array<string>;
+  seo?: Seo;
 };
 
 export type Post = {
@@ -585,7 +586,7 @@ export type POST_QUERYResult = {
   };
 } | null;
 // Variable: PROJECTS_QUERY
-// Query: *[_type == "project" && defined(slug.current)] | order(_createdAt desc) {    _id,    title,    slug,    mainImage,    description,    tags  }
+// Query: *[_type == "project" && seo.noIndex != true && defined(slug.current)] | order(_createdAt desc) {    _id,    title,    slug,    mainImage,    description,    tags  }
 export type PROJECTS_QUERYResult = Array<{
   _id: string;
   title: string | null;
@@ -612,7 +613,7 @@ export type PROJECTS_SLUGS_QUERYResult = Array<{
   slug: string | null;
 }>;
 // Variable: PROJECT_QUERY
-// Query: *[_type == "project" && slug.current == $slug][0]{  _id,  title,  body,  mainImage,  description,  githubUrl,  previewUrl,  tags,  slug,}
+// Query: *[_type == "project" && slug.current == $slug][0]{  _id,  title,  body,  mainImage,  description,  githubUrl,  previewUrl,  tags,  slug,  "seo": {    "title": coalesce(seo.title, title, ""),    "description": coalesce(seo.description,  ""),    "image": seo.image,    "noIndex": seo.noIndex == true  },}
 export type PROJECT_QUERYResult = {
   _id: string;
   title: string | null;
@@ -672,6 +673,23 @@ export type PROJECT_QUERYResult = {
   previewUrl: string | null;
   tags: Array<string> | null;
   slug: Slug | null;
+  seo: {
+    title: string | "";
+    description: string | "";
+    image: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      _type: "image";
+    } | null;
+    noIndex: boolean | false;
+  };
 } | null;
 
 // Query TypeMap
@@ -681,8 +699,8 @@ declare module "@sanity/client" {
     "*[_type == \"post\" && seo.noIndex != true && defined(slug.current)]|order(publishedAt desc)[0...12]{\n  _id,\n  title,\n  slug,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  }\n}": POSTS_QUERYResult;
     "*[_type == \"post\" && defined(slug.current)]{ \n  \"slug\": slug.current\n}": POSTS_SLUGS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  publishedAt,\n  \"categories\": coalesce(\n    categories[]->{\n      _id,\n      slug,\n      title\n    },\n    []\n  ),\n  author->{\n    name,\n    image\n  },\n    relatedPosts[]{\n    _key, // required for drag and drop\n    ...@->{_id, title, slug} // get fields from the referenced post\n  },\n  \"seo\": {\n    \"title\": coalesce(seo.title, title, \"\"),\n    \"description\": coalesce(seo.description,  \"\"),\n    \"image\": seo.image,\n    \"noIndex\": seo.noIndex == true\n  },\n}": POST_QUERYResult;
-    "\n  *[_type == \"project\" && defined(slug.current)] | order(_createdAt desc) {\n    _id,\n    title,\n    slug,\n    mainImage,\n    description,\n    tags\n  }\n": PROJECTS_QUERYResult;
+    "\n  *[_type == \"project\" && seo.noIndex != true && defined(slug.current)] | order(_createdAt desc) {\n    _id,\n    title,\n    slug,\n    mainImage,\n    description,\n    tags\n  }\n": PROJECTS_QUERYResult;
     "\n  *[_type == \"project\" && defined(slug.current)] {\n    \"slug\": slug.current\n  }\n": PROJECTS_SLUGS_QUERYResult;
-    "*[_type == \"project\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  description,\n  githubUrl,\n  previewUrl,\n  tags,\n  slug,\n}": PROJECT_QUERYResult;
+    "*[_type == \"project\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  description,\n  githubUrl,\n  previewUrl,\n  tags,\n  slug,\n  \"seo\": {\n    \"title\": coalesce(seo.title, title, \"\"),\n    \"description\": coalesce(seo.description,  \"\"),\n    \"image\": seo.image,\n    \"noIndex\": seo.noIndex == true\n  },\n}": PROJECT_QUERYResult;
   }
 }

@@ -77,6 +77,10 @@ export const projectType = defineType({
             },
             initialValue: [],
             description: 'Tecnologías o palabras clave asociadas al proyecto (ej. React, Next.js, CSS).'
-        })
+        }),
+        defineField({
+            name: "seo",
+            type: "seo",
+        }),
     ]
 })
