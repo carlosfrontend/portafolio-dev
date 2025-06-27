@@ -1,7 +1,7 @@
 import { defineQuery } from 'next-sanity'
 
 export const POSTS_QUERY =
-  defineQuery(`*[_type == "post" && defined(slug.current)]|order(publishedAt desc)[0...12]{
+  defineQuery(`*[_type == "post" && seo.noIndex != true && defined(slug.current)]|order(publishedAt desc)[0...12]{
   _id,
   title,
   slug,
@@ -49,7 +49,13 @@ export const POST_QUERY =
     relatedPosts[]{
     _key, // required for drag and drop
     ...@->{_id, title, slug} // get fields from the referenced post
-  }
+  },
+  "seo": {
+    "title": coalesce(seo.title, title, ""),
+    "description": coalesce(seo.description,  ""),
+    "image": seo.image,
+    "noIndex": seo.noIndex == true
+  },
 }`)
 
 export const PROJECTS_QUERY = defineQuery(`
