@@ -92,15 +92,3 @@ export const PROJECT_QUERY = defineQuery(`*[_type == "project" && slug.current =
     "noIndex": seo.noIndex == true
   },
 }`);
-
-export const OG_IMAGE_QUERY = defineQuery(`
-  *[_id == $id][0]{
-    title,
-    "image": mainImage.asset->{
-      url,
-      metadata {
-        palette,
-      },
-    }
-  }    
-`);
