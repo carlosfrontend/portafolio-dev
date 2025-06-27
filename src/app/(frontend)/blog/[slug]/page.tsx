@@ -34,14 +34,20 @@ export async function generateMetadata({
     if (post.seo.image) {
         metadata.openGraph = {
             images: {
-                url: urlFor(post.seo.image).width(1200).height(630).url(),
+                url: post.seo.image
+                    ? urlFor(post.seo.image).width(1200).height(630).url()
+                    : `/api/og?id=${post._id}`,
                 width: 1200,
                 height: 630,
             },
         };
         metadata.twitter = {
             images: {
-                url: urlFor(post.seo.image).width(1200).height(630).url(),
+                url: post.seo.image
+                    ? urlFor(post.seo.image).width(1200).height(630).url()
+                    : `/api/og?id=${post._id}`,
+                width: 1200,
+                height: 630,
             },
         };
     }

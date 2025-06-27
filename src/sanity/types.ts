@@ -691,6 +691,23 @@ export type PROJECT_QUERYResult = {
     noIndex: boolean | false;
   };
 } | null;
+// Variable: OG_IMAGE_QUERY
+// Query: *[_id == $id][0]{    title,    "image": mainImage.asset->{      url,      metadata {        palette      }    }  }
+export type OG_IMAGE_QUERYResult = {
+  title: null;
+  image: null;
+} | {
+  title: string | null;
+  image: null;
+} | {
+  title: string | null;
+  image: {
+    url: string | null;
+    metadata: {
+      palette: SanityImagePalette | null;
+    } | null;
+  } | null;
+} | null;
 
 // Query TypeMap
 import "@sanity/client";
@@ -702,5 +719,6 @@ declare module "@sanity/client" {
     "\n  *[_type == \"project\" && seo.noIndex != true && defined(slug.current)] | order(_createdAt desc) {\n    _id,\n    title,\n    slug,\n    mainImage,\n    description,\n    tags\n  }\n": PROJECTS_QUERYResult;
     "\n  *[_type == \"project\" && defined(slug.current)] {\n    \"slug\": slug.current\n  }\n": PROJECTS_SLUGS_QUERYResult;
     "*[_type == \"project\" && slug.current == $slug][0]{\n  _id,\n  title,\n  body,\n  mainImage,\n  description,\n  githubUrl,\n  previewUrl,\n  tags,\n  slug,\n  \"seo\": {\n    \"title\": coalesce(seo.title, title, \"\"),\n    \"description\": coalesce(seo.description,  \"\"),\n    \"image\": seo.image,\n    \"noIndex\": seo.noIndex == true\n  },\n}": PROJECT_QUERYResult;
+    "\n  *[_id == $id][0]{\n    title,\n    \"image\": mainImage.asset->{\n      url,\n      metadata {\n        palette\n      }\n    }\n  }    \n": OG_IMAGE_QUERYResult;
   }
 }
