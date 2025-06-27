@@ -28,6 +28,7 @@ export async function generateMetadata({
     const metadata: Metadata = {
         title: project?.seo.title,
         description: project?.seo.description,
+        metadataBase: new URL("https://carlospulido-portafolio.vercel.app"),
     }
 
     if (project.seo.image) {
