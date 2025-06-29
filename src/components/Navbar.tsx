@@ -14,7 +14,8 @@ export default function Navbar() {
             (elem as HTMLElement)?.blur();
         }
     }
-
+    console.log(pathName)
+    if (pathName.match(/\/studio\/*/)) return null
     return (
         <div className="navbar bg-base-100 shadow-sm sticky top-0 z-40">
             <div className="navbar-start">
