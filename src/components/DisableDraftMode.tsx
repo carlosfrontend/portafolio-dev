@@ -1,12 +1,14 @@
 "use client";
 
 import { useDraftModeEnvironment } from "next-sanity/hooks";
+import { usePathname } from "next/navigation";
 
 export function DisableDraftMode() {
+    const pathName = usePathname();
     const environment = useDraftModeEnvironment();
 
     // Only show the disable draft mode button when outside of Presentation Tool
-    if (environment !== "live" && environment !== "unknown") {
+    if (environment !== "live" && environment !== "unknown" && pathName !== "/studio") {
         return null;
     }
 
