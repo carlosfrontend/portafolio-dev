@@ -7,7 +7,7 @@ export default function Footer() {
   const pathName: string = usePathname()
   if (pathName.match(/\/studio\/*/)) return null
   return (
-    <footer className='footer flex sm:footer-horizontal bg-base-100   text-base-content items-center justify-center gap-6 p-10 shadow-md shadow-primary flex-col'>
+    <footer className='footer mt-auto flex sm:footer-horizontal bg-base-100   text-base-content items-center justify-center gap-6 p-10 flex-col'>
       <aside className='flex flex-col items-center'>
         <p className='text-base-content/80'>Desarrollado por Carlos Pulido</p>
         <p className='text-base-content/80'>en {new Date().getFullYear()}</p>

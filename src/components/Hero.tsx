@@ -55,7 +55,7 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
   });
 
   return (
-    <div className='relative top-0 min-h-dvh flex justify-center items-center bg-none md:bg-base-200'>
+    <article className='relative top-0 min-h-dvh flex justify-center items-center bg-none md:bg-base-200'>
       <div className=' w-96 md:w-[480px] flex flex-col justify-between md:shadow-md bg-none shadow-none md:bg-base-100'>
 
         <a
@@ -66,7 +66,7 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
           title='Visita mi perfil de LinkedIn'
           tabIndex={0}
         >
-          <figure className='flex justify-center pt-10 '>
+          <figure className='flex justify-center mt-10 w-full p-4 '>
             <div className='w-24 rounded-full text-success md:text-base-content avatar avatar-online'>
               <span className='text-xs text-center  absolute -inset-6 left-20 w-[15ch]  md:left-14 md:w-[30ch] md:top-0. font-semibold pt-6'>
                 Disponible para trabajar
@@ -79,21 +79,20 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
             </div>
           </figure>
         </a>
-        <div className='card-body  items-center justify-center text-center text-primary-content'>
-          <h1 ref={title} className=' text-pretty text-base-content text-4xl font-extrabold'>
+        <div className='card-body w-full  items-center justify-center text-center text-primary-content p-4'>
+          <p ref={title} className=' text-pretty text-base-content text-4xl font-extrabold'>
             Hola, soy  Carlos Pulido
-          </h1>
+          </p>
           <h2 ref={subtitle} className='text-2xl text-base-content font-medium py-4'>
             Desarrollador Web Frontend
           </h2>
-          <div className='card-actions'>
-            <Link ref={linkButton} href='/about' className='btn btn-primary'>
-              Conóceme
-            </Link>
-          </div>
+
+          <Link ref={linkButton} href='/about' className='btn btn-primary w-full md:w-auto '>
+            Conóceme
+          </Link>
         </div>
 
-        <div className='flex  w-[180px] md:w-full self-center gap-4 justify-center items-stretch  flex-wrap flex-col md:flex-row'>
+        <div className='flex min-w-[180px] p-4 md:w-full self-center gap-4 justify-center items-stretch  flex-wrap flex-col md:flex-row'>
           <a
             href={'/Carlos_Pulido_CV_ES_.pdf'}
             target='_blank'
@@ -118,6 +117,6 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
           <Stats blogCount={blogCount} projectCount={projectCount} />
         </div>
       </div>
-    </div>
+    </article>
   );
 }
