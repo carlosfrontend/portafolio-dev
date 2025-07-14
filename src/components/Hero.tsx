@@ -55,7 +55,7 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
   });
 
   return (
-    <article className='relative top-0 min-h-dvh flex justify-center items-center bg-none md:bg-base-200'>
+    <article className='relative h-full bg-base-200 flex justify-center items-center bg-none '>
       <div className=' w-96 md:w-[480px] flex flex-col justify-between md:shadow-md bg-none shadow-none md:bg-base-100'>
 
         <a

@@ -8,13 +8,18 @@ export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
     const blurDataUrl = mainImage ? getBlurDataUrl(mainImage) : undefined;
 
     return (
-        <Link
+        <div
             className="card hover:border hover:border-base-content transform bg-base-200 hover:scale-105 transition-all duration-300 ease-in-out group"
-            href={`/projects/${slug!.current}`}
+
         >
             <article className="flex flex-col gap-4 justify-start items-start p-6">
                 <h2 className="text-xl font-semibold">{title}</h2>
-
+                <Link
+                    href={`/projects/${slug!.current}`}
+                    className="btn btn-soft transform bg-secondary text-accent-content hover:scale-105 transition-all duration-300 ease-in-out"
+                >
+                    <span>Saber más</span><span className="ml-2">&raquo;</span>
+                </Link>
                 {(tags ?? []).length > 0 && (
                     <div className="flex flex-wrap gap-2">
                         {tags?.map((tag) => (
@@ -44,6 +49,6 @@ export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
                     </div>
                 )}
             </article>
-        </Link>
+        </div>
     )
 }

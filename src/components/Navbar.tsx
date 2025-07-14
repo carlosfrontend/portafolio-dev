@@ -16,7 +16,7 @@ export default function Navbar() {
     }
     if (pathName.match(/\/studio\/*/)) return null
     return (
-        <header className="navbar bg-base-100 shadow-sm sticky top-0 z-40">
+        <header className="navbar bg-base-100 border-b-1 border-base-content/10 sticky top-0 z-40">
             <div className="navbar-start">
                 <div className="dropdown" >
                     <div tabIndex={0} role="button" aria-label='Menu' className="btn btn-ghost lg:hidden">

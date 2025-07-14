@@ -16,7 +16,8 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto 2fr;
   min-height: 100dvh;
 }

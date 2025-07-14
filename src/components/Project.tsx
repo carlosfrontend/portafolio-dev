@@ -10,7 +10,7 @@ import { getBlurDataUrl } from "@/sanity/lib/image"
 export function Project(props: NonNullable<PROJECT_QUERYResult>) {
     const { title, mainImage, body, description, githubUrl, previewUrl, tags } = props
     const blurDataUrl = mainImage ? getBlurDataUrl(mainImage) : undefined
-
+    console.log(githubUrl)
     return (
         <article className="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8">
             <header className="mb-6 space-y-4">
@@ -42,7 +42,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
                             href={previewUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn btn-secondary text-accent-content"
+                            className="btn btn-soft transform bg-secondary text-accent-content hover:scale-105 transition-all duration-300 ease-in-out"
                         >
                             Ver Proyecto
                         </Link>
@@ -52,7 +52,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
                             href={githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="btn btn-outline"
+                            className="btn btn-soft transform bg-secondary text-accent-content hover:scale-105 transition-all duration-300 ease-in-out"
                         >
                             Código en GitHub
                         </Link>

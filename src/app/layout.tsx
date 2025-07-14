@@ -93,7 +93,7 @@ export default async function RootLayout({
 
         >
           <Navbar />
-          <main className="min-h-dvh">
+          <main className="h-full">
             {children}
             <SanityLive />
             {(await draftMode()).isEnabled && (
@@ -103,8 +103,8 @@ export default async function RootLayout({
               </>
             )}
           </main>
-          <Footer />
         </ThemeProvider>
+        <Footer />
       </body>
     </html>
   );

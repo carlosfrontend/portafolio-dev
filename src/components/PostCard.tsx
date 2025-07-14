@@ -12,11 +12,17 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
     const blurDataUrl = mainImage ? getBlurDataUrl(mainImage) : undefined
 
     return (
-        <Link className="card hover:border hover:border-base-content transform bg-base-200 hover:scale-105 transition-all duration-300 ease-in-out group " href={`/blog/${props.slug!.current}`}>
+        <div className="card hover:border hover:border-base-content transform bg-base-200 hover:scale-105 transition-all duration-300 ease-in-out group">
             <article className="flex flex-col gap-4 justify-start items-start p-6">
                 <div className="py-6 flex flex-wrap gap-2">
                     <PostCategories categories={categories} />
                 </div>
+                <Link
+                    href={`/blog/${props.slug!.current}`}
+                    className="btn btn-soft transform bg-secondary text-accent-content hover:scale-105 transition-all duration-300 ease-in-out"
+                >
+                    <span>Saber más</span><span className="ml-2">&raquo;</span>
+                </Link>
                 <div>
                     <h2 className="py-2">
                         <span>{title}</span>
@@ -40,6 +46,6 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
                     ) : null}
                 </div>
             </article>
-        </Link>
+        </div>
     )
 }
