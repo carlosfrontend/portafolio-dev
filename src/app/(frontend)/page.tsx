@@ -7,7 +7,6 @@ import Link from 'next/link'
 export default async function Home() {
   const blogCount = await client.fetch(`count(*[_type == "post"])`)
   const projectCount = await client.fetch(`count(*[_type == "project"])`)
-  console.log(blogCount, projectCount)
   return (
     <>
       <Hero blogCount={blogCount} projectCount={projectCount} />
