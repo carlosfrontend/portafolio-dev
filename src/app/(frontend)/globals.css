@@ -13,11 +13,11 @@
 @custom-variant dark (&:where([data-theme=business], [data-theme=business] *));
 html {
   color-scheme: corporate;
+  scroll-behavior: smooth;
 }
 
 body {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: auto auto 2fr;
+  display: flex;
+  flex-direction: column;
   min-height: 100dvh;
 }

@@ -58,7 +58,7 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
-export default function AboutLayout({
+export default function TimeLineLayout({
     children,
 }: {
     children: React.ReactNode;

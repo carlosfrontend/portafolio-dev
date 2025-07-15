@@ -55,8 +55,8 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
   });
 
   return (
-    <article className='relative h-full bg-base-200 flex justify-center items-center bg-none py-2 '>
-      <div className=' w-96 md:w-[480px] shadow-base-300 flex flex-col justify-between md:shadow-md bg-none shadow-none md:bg-base-100 rounded-md'>
+    <section className='relative min-h-[100dvh] flex flex-col justify-start md:top-10 items-center'>
+      <div className=' w-full md:w-[480px] shadow-base-300 flex flex-col justify-between md:shadow-md  shadow-none md:bg-base-100 rounded-md'>
 
         <a
           href={'https://www.linkedin.com/in/carlosfrontend/'}
@@ -66,7 +66,7 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
           title='Visita mi perfil de LinkedIn'
           tabIndex={0}
         >
-          <figure className='flex justify-center mt-10 w-full p-4 '>
+          <figure className='flex justify-center w-full p-4 mt-10 '>
             <div className='w-24 rounded-full text-success md:text-base-content avatar avatar-online'>
               <span className='text-xs text-center  absolute -inset-6 left-20 w-[15ch]  md:left-14 md:w-[30ch] md:top-0. font-semibold pt-6'>
                 Disponible para trabajar
@@ -87,18 +87,18 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
             Desarrollador Web Frontend
           </h2>
 
-          <Link ref={linkButton} href='/about' className='btn btn-primary w-full md:w-auto '>
+          <Link ref={linkButton} href='#about' className='btn btn-primary w-full md:w-auto py-6 text-lg md:text-sm md:py-0 '>
             Conóceme
           </Link>
         </div>
 
-        <div className='flex min-w-[180px] p-4 md:w-full self-center gap-4 justify-center items-stretch  flex-wrap flex-col md:flex-row'>
+        <div className='flex w-full p-4 md:w-full self-center gap-4 justify-center items-stretch  flex-wrap flex-col md:flex-row'>
           <a
             href={'/Carlos_Pulido_CV_ES_.pdf'}
             target='_blank'
             rel='noopener noreferrer'
           >
-            <button className='btn btn-soft btn-md sm:btn-sm w-full flex justify-center items-center md:btn-md btn-info transition-all ease-in-out duration-300 hover:scale-105 sm:py-5 sm-px-2'>
+            <button className='btn btn-soft btn-md sm:btn-sm w-full flex justify-center items-center md:btn-md btn-info transition-all ease-in-out duration-300 hover:scale-105 sm:py-5 sm-px-2 py-6 text-lg md:text-sm md:py-0'>
               {' '}
               <DownloadIcon />
               Descargar CV
@@ -108,7 +108,7 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
             href={'mailto:carlosfrontend@hotmail.com'}
             rel='noopener noreferrer'
           >
-            <button className='btn btn-soft btn-md sm:btn-sm w-full flex justify-center md:btn-md btn-secondary hover:scale-105 ease-in-out transition-all duration-300 sm:py-5 sm-px-2'>
+            <button className='btn btn-soft btn-md sm:btn-sm w-full flex justify-center md:btn-md btn-secondary hover:scale-105 ease-in-out transition-all duration-300 sm:py-5 sm-px-2 py-6 text-lg md:text-sm md:py-0'>
               <EmailIcon />
               Enviar Email
             </button>
@@ -117,6 +117,6 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
           <Stats blogCount={blogCount} projectCount={projectCount} />
         </div>
       </div>
-    </article>
+    </section>
   );
 }

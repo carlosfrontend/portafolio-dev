@@ -28,7 +28,7 @@ export default function CopyEmailButton({ children }: { children: ReactNode }) {
             });
     }
     return (
-        <button onClick={copyEmailToClipboard} className='btn btn-soft btn-md flex justify-center items-center sm:btn-sm md:btn-md btn-accent hover:scale-105 transition-all ease-in-out duration-300 sm:py-5 sm:px-2'>
+        <button onClick={copyEmailToClipboard} className='btn btn-soft btn-md flex justify-center items-center sm:btn-sm md:btn-md btn-accent hover:scale-105 transition-all ease-in-out duration-300 sm:py-5 sm:px-2 py-6 text-lg md:text-sm md:py-0'>
             <CopyIcon />
             {children}
         </button>

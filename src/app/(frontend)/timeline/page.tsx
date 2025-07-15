@@ -6,45 +6,45 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
 
-export default function AboutPage() {
-    gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-    const container1 = useRef<HTMLDivElement>(null);
-    const container2 = useRef<HTMLDivElement>(null);
-
-    useGSAP(() => {
-        gsap.from(container1.current, {
-            scrollTrigger: {
-                trigger: container1.current,
-                scrub: true,
-                start: 'top 650',
-                end: 'center 400',
-            },
-            opacity: 0,
-            top: 100,
-        })
-    }, { scope: container1 });
-
-    useGSAP(() => {
-        gsap.from(container2.current, {
-            scrollTrigger: {
-                trigger: container2.current,
-                scrub: true,
-                start: 'start 600',
-                end: 'top center',
-            },
-            opacity: 0,
-            top: 100,
-            duration: .5
-        })
-    }, { scope: container2 });
+export default function TimeLinePage() {
+    /*  gsap.registerPlugin(useGSAP, ScrollTrigger);
+ 
+     const container1 = useRef<HTMLDivElement>(null);
+     const container2 = useRef<HTMLDivElement>(null);
+ 
+     useGSAP(() => {
+         gsap.from(container1.current, {
+             scrollTrigger: {
+                 trigger: container1.current,
+                 scrub: true,
+                 start: 'top 650',
+                 end: 'center 400',
+             },
+             opacity: 0,
+             top: 100,
+         })
+     }, { scope: container1 });
+ 
+     useGSAP(() => {
+         gsap.from(container2.current, {
+             scrollTrigger: {
+                 trigger: container2.current,
+                 scrub: true,
+                 start: 'start 600',
+                 end: 'top center',
+             },
+             opacity: 0,
+             top: 100,
+             duration: .5
+         })
+     }, { scope: container2 }); */
 
     return (
 
-        <div className='flex flex-col justify-center items-center min-h-dvh'>
-            <section className='w-full pt-16 md:w-[640px]'>
+        <div className='flex flex-col justify-start items-center min-h-dvh bg-base-100'>
+            <section className='w-full md:w-[640px]'>
 
-                <header className='max-h-screen flex flex-col justify-center items-center'>
+                {/*                 <header className='max-h-screen flex flex-col justify-center items-center'>
                     <h1 className='text-center md:text-6xl  bg-gradient-to-r from-accent to-primary bg-clip-text text-5xl font-extrabold text-transparent'>Carlos Pulido</h1>
                     <h2 className='pt-2 text-xl md:text-2xl text-center font-semibold !mb-0 !mt-0'>Desarrollador Frontend</h2>
                 </header>
@@ -77,8 +77,8 @@ export default function AboutPage() {
                 </article >
                 <article className=' ' ref={container1}>
                     <InfiniteScrollIcons />
-                </article>
-                <article className='pb-16' ref={container2}>
+                </article> */}
+                <article className='pb-16' >
                     <h3 className='md:divider text-center py-16 text-3xl md:text:5xl text-accent font-bold'>Línea de tiempo</h3>
                     <div className='grid grid-cols-1 place-items-center justify-center'>
                         <ul className="timeline timeline-vertical md:timeline-box p-6">

@@ -9,13 +9,13 @@ export default async function Page() {
 
     return (
         <div className="">
-            <header className="grid grid-auto-rows-auto place-items-center gap-5 md:gap-10 p-6 md:p-12">
+            <header className="grid grid-auto-rows-auto place-items-center gap-5 md:gap-10 p-6 md:p-12 bg-base-100">
                 <div className="flex flex-col items-center">
                     <PostTitle>CodeSpacio</PostTitle>
                     <PostSubitle>Un espacio de programación</PostSubitle>
                 </div>
             </header>
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-10 md:gap-14 p-6 md:p-12">
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-10 md:gap-14 p-6 md:p-12 bg-base-100">
                 {posts.map((post) => (
                     <PostCard key={post._id} {...post} />
                 ))}

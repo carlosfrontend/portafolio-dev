@@ -6,7 +6,7 @@ import { SparklesIcon } from './icons/SparklesIcon'
 export default function Stats({ blogCount, projectCount }: { blogCount: number, projectCount: number }) {
 
     return (
-        <div className=' py-10 flex justify-start gap-4  items-stretch flex-wrap w-full  md:justify-center '>
+        <div className=' py-10 flex flex-col md:flex-row justify-start gap-4  items-center flex-wrap w-full md:justify-center '>
             <Link href="/projects" className='hover:scale-105 border-1 transition-all duration-300 ease-in-out group w-full md:w-[210px]'>
 
                 <div className="stat w-full gap-2 bg-base-100  text-primary">

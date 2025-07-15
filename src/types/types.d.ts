@@ -19,3 +19,9 @@ export type SocialLink = {
 }
 
 export type SocialLinks = SocialLink[]
+
+export interface Skill {
+    icon: React.ElementType;
+    name: string;
+    aria: string;
+}

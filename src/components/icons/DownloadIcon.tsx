@@ -8,7 +8,7 @@ export default function DownloadIcon(props: SVGProps<SVGSVGElement>) {
       viewBox='0 0 24 24'
       strokeWidth={1.5}
       stroke='currentColor'
-      className='size-4'
+      className='size-8 md:size-4'
       {...props}
     >
       <path
