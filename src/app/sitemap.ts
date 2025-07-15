@@ -45,7 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 1,
         },
         {
-            url: 'https://carlospulido-portafolio.vercel.app/about',
+            url: 'https://carlospulido-portafolio.vercel.app/timeline',
             lastModified: new Date(),
             changeFrequency: 'yearly',
             priority: 0.8,
