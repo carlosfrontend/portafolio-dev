@@ -3,11 +3,11 @@ import InfiniteScrollIcons from '@/components/InfiniteScrollIcons'
 import { client } from '@/sanity/lib/client'
 import Link from 'next/link'
 
-export const revalidate = 60
 
 export default async function Home() {
   const blogCount = await client.fetch(`count(*[_type == "post"])`)
   const projectCount = await client.fetch(`count(*[_type == "project"])`)
+  console.log(blogCount, projectCount)
   return (
     <>
       <Hero blogCount={blogCount} projectCount={projectCount} />
