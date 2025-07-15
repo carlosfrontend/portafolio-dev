@@ -111,6 +111,7 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
                 src={ProfilePicture}
                 alt='Profile Picture'
                 className='rounded-full bg-base-100  opacity-85 transition-opacity duration-300 group-hover:opacity-100  group-hover: backdrop-blur-md'
+                loading='eager'
               />
             </div>
           </figure>
