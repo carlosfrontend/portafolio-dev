@@ -10,7 +10,6 @@ import { getBlurDataUrl } from "@/sanity/lib/image"
 export function Project(props: NonNullable<PROJECT_QUERYResult>) {
     const { title, mainImage, body, description, githubUrl, previewUrl, tags } = props
     const blurDataUrl = mainImage ? getBlurDataUrl(mainImage) : undefined
-    console.log(githubUrl)
     return (
         <article className="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8">
             <header className="mb-6 space-y-4">
