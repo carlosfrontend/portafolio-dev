@@ -1,83 +1,12 @@
 'use client'
-import InfiniteScrollIcons from '@/components/InfiniteScrollIcons';
-import React, { useRef } from 'react';
-import { gsap } from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Link from 'next/link';
+import React from 'react';
+
 
 export default function TimeLinePage() {
-    /*  gsap.registerPlugin(useGSAP, ScrollTrigger);
- 
-     const container1 = useRef<HTMLDivElement>(null);
-     const container2 = useRef<HTMLDivElement>(null);
- 
-     useGSAP(() => {
-         gsap.from(container1.current, {
-             scrollTrigger: {
-                 trigger: container1.current,
-                 scrub: true,
-                 start: 'top 650',
-                 end: 'center 400',
-             },
-             opacity: 0,
-             top: 100,
-         })
-     }, { scope: container1 });
- 
-     useGSAP(() => {
-         gsap.from(container2.current, {
-             scrollTrigger: {
-                 trigger: container2.current,
-                 scrub: true,
-                 start: 'start 600',
-                 end: 'top center',
-             },
-             opacity: 0,
-             top: 100,
-             duration: .5
-         })
-     }, { scope: container2 }); */
-
     return (
 
         <div className='flex flex-col justify-start items-center min-h-dvh bg-base-100'>
             <section className='w-full md:w-[640px]'>
-
-                {/*                 <header className='max-h-screen flex flex-col justify-center items-center'>
-                    <h1 className='text-center md:text-6xl  bg-gradient-to-r from-accent to-primary bg-clip-text text-5xl font-extrabold text-transparent'>Carlos Pulido</h1>
-                    <h2 className='pt-2 text-xl md:text-2xl text-center font-semibold !mb-0 !mt-0'>Desarrollador Frontend</h2>
-                </header>
-
-                <article ref={container1}>
-                    <h3 className='md:divider text-center py-10 text-3xl md:text:4xl text-accent font-bold'>Introducción</h3>
-                    <div className='prose prose-xl lg:prose-xl text-pretty text-left  p-6'>
-                        <p>¡Hola!, muchas gracias por pasarte por mi rincón en la web.</p>
-                        <p>
-                            Aunque vengo de sector administrativo, hace un tiempo descubrí mi verdadera pasión por el desarrollo <strong>frontend</strong>.
-                        </p>
-                        <p>
-                            Disfruto un montón el proceso de obtener una idea y ver cómo cobra vida en la web, que se vea genial y que cualquiera la pueda usar sin complicaciones.
-                        </p>
-
-
-                        <p>
-                            Siempre estoy al día de las tendencias y tecnologías actuales y tengo amplia experiencia en la creación de interfaces de usuario modernas y responsivas.
-                        </p>
-                        <p>
-                            Aquí podrás ver algunos de mis <Link href="/projects" className='link link-hover font-bold'>proyectos</Link> y, si te apetece, echar un vistazo a mi <Link href="/blog" className='link link-hover font-bold'>blog</Link> dónde comparto lo que voy descubriendo y aprendiendo.
-                        </p>
-                        <p>
-                            Ah, y también te dejo un pequeño timeline de mi etapa anterior más abajo, para que veas un poco mi recorrido antes de llegar hasta aquí.
-                        </p>
-                        <p>
-                            Cuando no estoy frente al código, me verás viajando o haciendo senderismo.
-                        </p>
-                    </div>
-                </article >
-                <article className=' ' ref={container1}>
-                    <InfiniteScrollIcons />
-                </article> */}
                 <article className='pb-16' >
                     <h3 className='md:divider text-center py-16 text-3xl md:text:5xl text-accent font-bold'>Línea de tiempo</h3>
                     <div className='grid grid-cols-1 place-items-center justify-center'>
