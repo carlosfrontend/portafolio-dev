@@ -33,7 +33,7 @@ export default function Navbar() {
                     </nav>
                 </div>
                 <Link href={"/"} className="btn btn-ghost text-[15px] md:text-2xl">
-                    <h1>Portafolio de Carlos Pulido</h1>
+                    <span>Portafolio de Carlos Pulido</span>
                 </Link>
             </div>
             <nav className="navbar-center hidden lg:flex">
