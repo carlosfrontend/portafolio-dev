@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
         description: 'Explora el portafolio de Carlos Pulido, desarrollador frontend. Descubre proyectos que demuestran experiencia en la creación de interfaces de usuario modernas y responsivas, y conoce mi trayectoria profesional.',
 
         openGraph: {
-            title: 'Sobre Carlos Pulido | Desarrollador Frontend',
+            title: 'Línea de tiempo | Portafolio de Carlos Pulido - Desarrollador Frontend',
             description: 'Conoce a Carlos Pulido, un desarrollador frontend apasionado por construir experiencias web increíbles. Explora mi trayectoria y mi enfoque profesional.',
             url: 'https://carlospulido-portafolio.vercel.app/timeline',
             siteName: 'Carlos Pulido - Portafolio',
