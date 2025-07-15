@@ -9,50 +9,86 @@ import Stats from './Stats';
 import { gsap } from 'gsap';
 import { useGSAP } from "@gsap/react";
 import { SplitText } from 'gsap/SplitText';
-import { useRef } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 
 
 export default function Hero({ blogCount, projectCount }: { blogCount: number, projectCount: number }) {
   gsap.registerPlugin(useGSAP, SplitText);
-  const title = useRef<HTMLDivElement>(null);
-  const subtitle = useRef<HTMLDivElement>(null);
-  const linkButton = useRef<HTMLAnchorElement>(null);
+
+  const titleRef = useRef<HTMLParagraphElement>(null);
+  const subtitleRef = useRef<HTMLHeadingElement>(null);
+  const linkButtonRef = useRef<HTMLAnchorElement>(null);
+
+  const splitTextTitleInstance = useRef<SplitText | null>(null);
+  const splitTextSubtitleInstance = useRef<SplitText | null>(null);
+  const tlRef = useRef<gsap.core.Timeline | null>(null);
 
 
   useGSAP(() => {
     document.fonts.ready.then(() => {
-      const splitTextTitle = SplitText.create(title.current, { type: "words" });
-      const splitTextSubtitle = SplitText.create(subtitle.current, { type: "words" });
-      gsap.from(splitTextTitle.words, {
-        y: 10,
-        autoAlpha: 0,
-        stagger: 0.2,
-        filter: 'blur(10px)',
-        duration: 1
-      })
-
-      gsap.from(
-        splitTextSubtitle.words, {
-        y: 8,
-        autoAlpha: 0,
-        stagger: 0.2,
-        filter: 'blur(10px)',
-        delay: 1
+      if (!titleRef.current || !subtitleRef.current || !linkButtonRef.current) {
+        console.warn("Algunas referencias de elementos no están disponibles para la animación principal.");
+        return;
       }
-      )
-      gsap.from(linkButton.current, {
-        scale: 1.1,
-        opacity: 0,
-        delay: 2
-      })
-      gsap.to(linkButton.current, {
-        scale: 1,
-        opacity: 1,
-        delay: 2
-      })
-    })
 
-  });
+      gsap.set([titleRef.current, subtitleRef.current, linkButtonRef.current], { clearProps: "all" });
+
+      splitTextTitleInstance.current = SplitText.create(titleRef.current, { type: "words" });
+      splitTextSubtitleInstance.current = SplitText.create(subtitleRef.current, { type: "words" });
+
+      gsap.set(splitTextTitleInstance.current.words, { y: 10, autoAlpha: 0, filter: 'blur(3px)' });
+      gsap.set(splitTextSubtitleInstance.current.words, { y: 8, autoAlpha: 0, filter: 'blur(2px)' });
+      gsap.set(linkButtonRef.current, { opacity: 0, scale: 0.9 });
+
+
+      const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+      tl.to(splitTextTitleInstance.current.words, {
+        y: 0,
+        autoAlpha: 1,
+        filter: 'blur(0px)',
+        stagger: 0.06,
+        duration: 0.4,
+      }, "start")
+
+        .to(splitTextSubtitleInstance.current.words, {
+          y: 0,
+          autoAlpha: 1,
+          filter: 'blur(0px)',
+          stagger: 0.04,
+          duration: 0.3,
+        }, "<0.15")
+
+        .to(linkButtonRef.current, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.3,
+        }, "<0.1");
+
+      tlRef.current = tl;
+
+    });
+  }, { scope: titleRef });
+
+
+  useLayoutEffect(() => {
+    return () => {
+      if (splitTextTitleInstance.current) {
+        splitTextTitleInstance.current.revert();
+        splitTextTitleInstance.current = null;
+      }
+      if (splitTextSubtitleInstance.current) {
+        splitTextSubtitleInstance.current.revert();
+        splitTextSubtitleInstance.current = null;
+      }
+
+      if (tlRef.current) {
+        tlRef.current.kill();
+        tlRef.current = null;
+      }
+    };
+  }, []);
+
 
   return (
     <section className='relative min-h-[100dvh] flex flex-col justify-start md:top-10 items-center'>
@@ -79,15 +115,16 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
             </div>
           </figure>
         </a>
+
         <div className='card-body w-full  items-center justify-center text-center text-primary-content p-4'>
-          <p ref={title} className=' text-pretty text-base-content text-4xl font-extrabold'>
-            Hola, soy  Carlos Pulido
+          <p ref={titleRef} className=' text-pretty text-base-content text-4xl font-extrabold'>
+            Hola, soy Carlos Pulido
           </p>
-          <h2 ref={subtitle} className='text-2xl text-base-content font-medium py-4'>
+          <h2 ref={subtitleRef} className='text-2xl text-base-content font-medium py-4'>
             Desarrollador Web Frontend
           </h2>
 
-          <Link ref={linkButton} href='#about' className='btn btn-primary w-full md:w-auto py-6 text-lg md:text-sm md:py-0 '>
+          <Link ref={linkButtonRef} href='#about' className='btn btn-primary w-full md:w-auto py-6 text-lg md:text-sm md:py-0 '>
             Conóceme
           </Link>
         </div>
