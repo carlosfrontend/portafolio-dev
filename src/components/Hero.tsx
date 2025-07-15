@@ -117,12 +117,12 @@ export default function Hero({ blogCount, projectCount }: { blogCount: number, p
         </a>
 
         <div className='card-body w-full  items-center justify-center text-center text-primary-content p-4'>
-          <p ref={titleRef} aria-hidden='false' className=' text-pretty text-base-content text-4xl font-extrabold'>
+          <h2 ref={titleRef} className=' text-pretty text-base-content text-4xl font-extrabold'>
             Hola, soy Carlos Pulido
-          </p>
-          <h2 ref={subtitleRef} className='text-2xl text-base-content font-medium py-4'>
-            Desarrollador Web Frontend
           </h2>
+          <h3 ref={subtitleRef} className='text-2xl text-base-content font-medium py-4'>
+            Desarrollador Web Frontend
+          </h3>
 
           <Link ref={linkButtonRef} href='#about' className='btn btn-primary w-full md:w-auto py-6 text-lg md:text-sm md:py-0 '>
             Conóceme
