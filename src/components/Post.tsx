@@ -47,6 +47,7 @@ export function Post(props: NonNullable<POST_QUERYResult>) {
                         priority={false}
                         placeholder="blur"
                         blurDataURL={blurDataUrl}
+                        loading="eager"
                     />
                 </figure>
             ) : null}

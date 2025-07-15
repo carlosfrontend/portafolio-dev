@@ -69,6 +69,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
                         className="transition-transform duration-300 transform hover:scale-105 object-cover w-full h-full"
                         priority={false}
                         blurDataURL={blurDataUrl}
+                        loading="eager"
                     />
                 </figure>
             )}

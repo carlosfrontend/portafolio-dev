@@ -42,6 +42,7 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
                             className='transition-transform duration-300 transform ease-in-out group-hover:scale-120'
                             placeholder="blur"
                             blurDataURL={blurDataUrl}
+                            loading='eager'
                         />
                     ) : null}
                 </div>

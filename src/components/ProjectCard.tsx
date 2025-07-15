@@ -45,6 +45,7 @@ export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
                             priority={false}
                             placeholder='blur'
                             blurDataURL={blurDataUrl}
+                            loading='eager'
                         />
                     </div>
                 )}
