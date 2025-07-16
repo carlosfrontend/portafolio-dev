@@ -6,7 +6,6 @@ import { Metadata } from "next";
 import { urlFor } from "@/sanity/lib/image";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
-
 type RouteProps = {
     params: Promise<{ slug: string }>;
 };
@@ -66,7 +65,7 @@ export default async function PostPage({ params }: RouteProps) {
     console.log(post._id)
 
     return (
-        <ViewTransition name={`post-${post._id}`}>
+        <ViewTransition>
             <Post {...post} />
         </ViewTransition>
     )

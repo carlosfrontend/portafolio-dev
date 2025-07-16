@@ -64,7 +64,7 @@ export default async function ProjectPage({ params }: RouteProps) {
     }
 
     return (
-        <ViewTransition name={`project-${project._id}`}>
+        <ViewTransition>
             <Project {...project} />
         </ViewTransition>
     )
