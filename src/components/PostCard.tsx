@@ -24,9 +24,9 @@ export function PostCard(props: POSTS_QUERYResult[0]) {
                     <span>Saber más</span><span className="ml-2">&raquo;</span>
                 </Link>
                 <div>
-                    <h2 className="py-2">
+                    <h4 className="py-2">
                         <span>{title}</span>
-                    </h2>
+                    </h4>
                     <div className="py-2">
                         <PostAuthor author={author} />
                         <PostPublishedAt publishedAt={publishedAt} />

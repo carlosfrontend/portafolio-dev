@@ -13,7 +13,7 @@ export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
 
         >
             <article className="flex flex-col gap-4 justify-start items-start p-6">
-                <h2 className="text-xl font-semibold">{title}</h2>
+                <h4 className="text-xl font-semibold">{title}</h4>
                 <Link
                     href={`/projects/${slug!.current}`}
                     className="btn btn-soft transform bg-secondary text-accent-content hover:scale-105 transition-all duration-300 ease-in-out"

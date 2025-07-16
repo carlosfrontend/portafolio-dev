@@ -16,7 +16,7 @@ export default function SkillsSection() {
                 scrollTrigger: {
                     trigger: skillsRef.current,
                     start: 'top 85%',
-                    end: 'bottom 50%',
+                    end: 'bottom 78%',
                     scrub: true,
                 },
                 opacity: 0,

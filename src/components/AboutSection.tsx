@@ -21,7 +21,10 @@ export default function AboutSection() {
                     scrub: true,
                 },
                 opacity: 0,
-                y: 50,
+                scale: 0.8,
+                y: 80,
+                rotateX: -90,
+                ease: 'power4.out',
             });
         }
 
@@ -42,11 +45,6 @@ export default function AboutSection() {
 
     return (<article className='w-full pt-16 md:w-[640px]'>
 
-        <header className='flex flex-col justify-center items-center'>
-            <h1 className='text-center md:text-6xl  bg-gradient-to-r from-accent to-primary bg-clip-text text-5xl font-extrabold text-transparent'>Carlos Pulido</h1>
-            <h2 className='pt-2 text-xl md:text-2xl text-center font-semibold !mb-0 !mt-0'>Desarrollador Frontend</h2>
-        </header>
-
         <div >
             <h3 ref={aboutHeaderRef} className='md:divider text-center py-10 text-3xl md:text:4xl text-accent font-bold'>Sobre mí</h3>
             <div ref={aboutContentRef} className='prose prose-xl lg:prose-xl text-pretty text-left  p-6'>
@@ -66,7 +64,7 @@ export default function AboutSection() {
                     Aquí podrás ver algunos de mis <Link href="/projects" className='link link-hover font-bold'>proyectos</Link> y, si te apetece, echar un vistazo a mi <Link href="/blog" className='link link-hover font-bold'>blog</Link> dónde comparto lo que voy descubriendo y aprendiendo.
                 </p>
                 <p>
-                    Ah, y también te dejo un <em>timeline</em> con mi <Link href="/timeline" className='link link-hover font-bold'>trayectoria profesional</Link> de mi etapa anterior más abajo, para que veas un poco mi recorrido antes de llegar hasta aquí.
+                    Ah, y también te dejo un <Link href="/timeline" className='link link-hover font-bold'><em>timeline</em></Link> con la trayectoria profesional de mi de mi etapa anterior, para que veas un poco mi recorrido antes de llegar hasta aquí.
                 </p>
                 <p>
                     Cuando no estoy frente al código, me verás viajando o haciendo senderismo.
