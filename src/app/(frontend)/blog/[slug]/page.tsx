@@ -62,7 +62,6 @@ export default async function PostPage({ params }: RouteProps) {
     if (!post) {
         notFound()
     }
-    console.log(post._id)
 
     return (
         <ViewTransition>
