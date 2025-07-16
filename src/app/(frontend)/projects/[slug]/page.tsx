@@ -4,6 +4,7 @@ import { Project } from '@/components/Project'
 import { notFound } from 'next/navigation'
 import { Metadata } from "next";
 import { urlFor } from "@/sanity/lib/image";
+import { unstable_ViewTransition as ViewTransition } from "react";
 
 type RouteProps = {
     params: Promise<{ slug: string }>;
@@ -63,6 +64,8 @@ export default async function ProjectPage({ params }: RouteProps) {
     }
 
     return (
-        <Project {...project} />
+        <ViewTransition name={`project-${project._id}`}>
+            <Project {...project} />
+        </ViewTransition>
     )
 }
