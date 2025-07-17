@@ -15,13 +15,13 @@ export default function TimeLinePage() {
                     </PostSubitle>
                 </div>
             </header>
-            <section className='w-full max-w-4xl px-4 py-16 md:px-8'>
+            <section className='w-full max-w-4xl  py-16 px-0 md:px-8'>
                 <article className='pb-16'>
 
                     <div className='grid grid-cols-1 place-items-center justify-center'>
                         <ul className="timeline timeline-vertical timeline-compact max-w-full md:max-w-xl">
                             <li>
-                                <div className="timeline-start text-right md:text-end pr-4 text-sm py-6 md:text-base font-jetBrainsMono text-base-content">
+                                <div className="timeline-start text-right md:text-end pr-4 text-sm md:text-base font-jetBrainsMono text-base-content">
                                     2023-Actualidad
                                 </div>
                                 <div className="timeline-middle">
@@ -35,7 +35,7 @@ export default function TimeLinePage() {
                                         Desde mi inmersión en el desarrollo web, me he enfocado en construir interfaces de usuario interactivas y eficientes.
                                     </p>
                                     <p className='text-lg text-base-content/80 pt-2'>
-                                        He cultivado mis habilidades como programador Frontend de forma autodidacta, a través de plataformas rigurosas como <strong>The Odin Project</strong> y <strong>freeCodeCamp</strong>, complementado con el seguimiento constante de referentes de la comunidad como <em>Fazt Web</em>, <em>Carlos Azaustre</em> y <em>Midudev</em> entre otros.
+                                        He cultivado mis habilidades como programador Frontend de forma autodidacta, a través de plataformas como <strong>The Odin Project</strong> y <strong>freeCodeCamp</strong>, complementado con el seguimiento constante de referentes de la comunidad como <em>Fazt Web</em>, <em>Carlos Azaustre</em> y <em>Midudev</em> entre otros.
                                     </p>
                                     <p className="text-lg text-base-content/80 pt-2">
                                         A través de esta <strong>formación inmersiva</strong> y la <strong>creación de proyectos</strong>, he dominado el ecosistema Frontend con tecnologías clave como <strong>React</strong>, <strong>Next.js</strong> y <strong>Tailwind CSS</strong>.
@@ -53,12 +53,12 @@ export default function TimeLinePage() {
                                     </p>
 
                                 </div>
-                                <hr className="bg-neutral" />
+                                <hr className="dark:bg-sky-300/90 bg-sky-800/90" />
                             </li>
 
                             <li>
                                 <hr className="bg-neutral" />
-                                <div className="timeline-start text-right md:text-end pr-4 text-sm py-6 md:text-base font-jetBrainsMono text-base-content">
+                                <div className="timeline-start text-right md:text-end pr-4 text-sm  md:text-base font-jetBrainsMono text-base-content">
                                     2016-2023
                                 </div>
                                 <div className="timeline-middle">
@@ -77,12 +77,11 @@ export default function TimeLinePage() {
                                         Me encargaba de gestionar citas, responder a sus dudas y coordinar documentación médica, siempre con la meta de facilitarles el proceso y que se sintieran en buenas manos.
                                     </p>
                                 </div>
-                                <hr className="bg-neutral" />
+                                <hr className="dark:bg-cyan-300/90 bg-cyan-800/90" />
                             </li>
 
                             <li>
-                                <hr className="bg-neutral" />
-                                <div className="timeline-start text-right md:text-end pr-4 text-sm py-6 md:text-base font-jetBrainsMono text-base-content">
+                                <div className="timeline-start text-right md:text-end pr-4 text-sm md:text-base font-jetBrainsMono text-base-content">
                                     2003-2015
                                 </div>
                                 <div className="timeline-middle">
@@ -108,12 +107,12 @@ export default function TimeLinePage() {
                                         Ver cómo aumentaba su confianza y autonomía digital fue, sin duda, lo más gratificante de esta experiencia.
                                     </p>
                                 </div>
-                                <hr className="bg-neutral" />
+                                <hr className="dark:bg-yellow-500/90 bg-yellow-800/90" />
                             </li>
 
                             <li>
                                 <hr className="bg-neutral" />
-                                <div className="timeline-start text-right md:text-end pr-4 text-sm py-6 md:text-base font-jetBrainsMono text-base-content">
+                                <div className="timeline-start text-right md:text-end pr-4 text-sm md:text-base font-jetBrainsMono text-base-content">
                                     2003
                                 </div>
                                 <div className="timeline-middle">
@@ -125,15 +124,14 @@ export default function TimeLinePage() {
                                         Expansión TV - Grupo Recoletos
                                     </h4>
                                     <p className="text-lg text-base-content/80">
-                                        En mi rol como Operador de Cámaras en televisión, utilicé tecnología avanzada para capturar imágenes de alta calidad en entornos virtuales. Colaboré con realizadores y productores, asegurando que cada toma estuviera perfectamente encuadrada e iluminada, contribuyendo a la creación de programas visualmente atractivos.
+                                        En mi rol como Operador de Cámaras en televisión, utilicé tecnologías avanzadas para capturar imágenes de alta calidad en entornos virtuales. Colaboré con realizadores y productores, asegurando que cada toma estuviera perfectamente encuadrada e iluminada, contribuyendo a la creación de programas visualmente atractivos.
                                     </p>
                                 </div>
-                                <hr className="bg-neutral" />
+                                <hr className="dark:bg-emerald-300/90 bg-emerald-800/90" />
                             </li>
 
                             <li>
-                                <hr className="bg-neutral" />
-                                <div className="timeline-start text-right md:text-end pr-4 text-sm py-6 md:text-base font-jetBrainsMono text-base-content">
+                                <div className="timeline-start text-right md:text-end pr-4 text-sm md:text-base font-jetBrainsMono text-base-content">
                                     2001-2003
                                 </div>
                                 <div className="timeline-middle">
@@ -141,7 +139,7 @@ export default function TimeLinePage() {
                                 </div>
                                 <div className="timeline-end timeline-box bg-base-200 p-4 rounded-lg shadow-md text-left">
                                     <h3 className="font-bold text-2xl dark:text-lime-300/90 text-lime-800/90">Técnico Superior en Imágen</h3>
-                                    <h4 className='font-bold text-sm divider'>I.    E.S. Puerta Bonita</h4>
+                                    <h4 className='font-bold text-sm divider'>I.E.S. Puerta Bonita</h4>
                                     <p className="text-lg text-base-content/80">
                                         Formación técnica en captación de imágenes y tratamiento digital de las mismas, con especialidad en fotografia, video e iluminación.
                                     </p>
@@ -151,7 +149,7 @@ export default function TimeLinePage() {
                     </div>
                 </article>
 
-                <article className='w-full px-4 py-8 md:px-28'>
+                <article className='w-full px-4 py-8 pl-9 pr-2 mr-1 md:px-0 md:mr-0'>
                     <h2 className='text-xl md:text-2xl font-bold text-center text-accent mb-8'>Más información</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
