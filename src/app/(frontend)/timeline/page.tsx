@@ -34,7 +34,7 @@ export default function TimeLinePage() {
                                         Desde mi inmersión en el desarrollo web, me he enfocado en construir interfaces de usuario interactivas y eficientes.
                                     </p>
                                     <p className='text-lg text-base-content/80 pt-2'>
-                                        He cultivado mis habilidades como programador Frontend de forma autodidacta, a través de plataformas rigurosas como <strong>The Odin Project</strong> y <strong>freeCodeCamp</strong>, complementado con el seguimiento constante de referentes de la comunidad como Fazt Web, Carlos Azaustre y Midudev entre otros.
+                                        He cultivado mis habilidades como programador Frontend de forma autodidacta, a través de plataformas rigurosas como <strong>The Odin Project</strong> y <strong>freeCodeCamp</strong>, complementado con el seguimiento constante de referentes de la comunidad como <em>Fazt Web</em>, <em>Carlos Azaustre</em> y <em>Midudev</em> entre otros.
                                     </p>
                                     <p className="text-lg text-base-content/80 pt-2">
                                         A través de esta <strong>formación inmersiva</strong> y la <strong>creación de proyectos</strong>, he dominado el ecosistema Frontend con tecnologías clave como <strong>React</strong>, <strong>Next.js</strong> y <strong>Tailwind CSS</strong>.
@@ -48,7 +48,7 @@ export default function TimeLinePage() {
                                     </p>
 
                                     <p className='text-lg text-base-content/80 pt-2'>
-                                        Busco activamente un puesto donde pueda aportar mi <strong>entusiasmo y capacidad de resolución</strong>, contribuyendo al crecimiento de un equipo innovador.
+                                        Busco activamente un puesto dónde pueda aportar mi <strong>entusiasmo y capacidad de resolución</strong>, contribuyendo al crecimiento de un equipo innovador.
                                     </p>
 
                                 </div>
@@ -142,7 +142,7 @@ export default function TimeLinePage() {
                                     <h3 className="font-bold text-2xl dark:text-lime-300/90 text-lime-800/90">Técnico Superior en Imágen</h3>
                                     <h4 className='font-bold text-sm divider'>I.    E.S. Puerta Bonita</h4>
                                     <p className="text-lg text-base-content/80">
-                                        Formación técnica en producción audiovisual, edición y postproducción de imágen y sonido.
+                                        Formación técnica en captación de imágenes y tratamiento digital de las mismas, con especialidad en fotografia, video e iluminación.
                                     </p>
                                 </div>
                             </li>
