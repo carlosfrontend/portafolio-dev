@@ -30,7 +30,8 @@ export default function TimeLinePage() {
                                 </div>
                                 <div className="timeline-end timeline-box bg-base-200 p-4 rounded-lg shadow-md text-left">
                                     <h3 className="font-bold text-2xl  dark:text-sky-300/90 text-sky-800/90">Programador Web Frontend</h3>
-                                    <p className="text-lg text-base-content/80 pt-2">
+                                    <h4 className='font-bold text-sm divider'>Formación y proyectos</h4>
+                                    <p className="text-lg text-base-content/80  pt-2">
                                         Desde mi inmersión en el desarrollo web, me he enfocado en construir interfaces de usuario interactivas y eficientes.
                                     </p>
                                     <p className='text-lg text-base-content/80 pt-2'>
