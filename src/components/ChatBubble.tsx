@@ -17,7 +17,7 @@ export default function ChatBubble({ children }: { children: ReactNode }) {
           />
         </div>
       </div>
-      <div className="chat-bubble">
+      <div className="chat-bubble bg-base-100">
         {children}
       </div>
     </div>

@@ -25,3 +25,12 @@ body {
   flex-direction: column;
   min-height: 100dvh;
 }
+
+.Toastify__toast-theme--light,
+.Toastify__toast-theme--dark {
+  @apply bg-base-200;
+}
+
+.Toastify__close-button > svg {
+  @apply dark:text-white text-base-content;
+}
