@@ -22,7 +22,6 @@ const inter = Inter_Tight({
   preload: true,
 });
 
-
 export const metadata: Metadata = {
   title: "Carlos Pulido | Desarrollador Frontend - Portafolio y Blog",
   description: "Explora el portafolio de Carlos Pulido, un desarrollador frontend especializado en crear interfaces de usuario modernas y experiencias web interactivas. Descubre proyectos innovadores y artículos sobre desarrollo.",

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@heroicons/react": "^2.2.0",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@ridemountainpig/svgl-react": "^1.0.7",
     "@sanity/code-input": "^5.1.2",

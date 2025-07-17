@@ -8,7 +8,7 @@ export default async function Page() {
     const { data: posts } = await sanityFetch({ query: POSTS_QUERY });
 
     return (
-        <div className="">
+        <div>
             <header className="grid grid-auto-rows-auto place-items-center gap-5 md:gap-10 p-6 md:p-12 bg-base-100">
                 <div className="flex flex-col items-center">
                     <PostTitle>CodeSpacio</PostTitle>
