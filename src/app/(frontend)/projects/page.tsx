@@ -16,7 +16,7 @@ export default async function ProjectsPage() {
                     <PostSubitle>Algunos trabajos y experimentos personales</PostSubitle>
                 </div>
             </header>
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-10 md:gap-14 p-6 md:p-12">
+            <div className="grid md:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-10 md:gap-14 p-6 md:p-12">
                 {(projects as PROJECTS_QUERYResult).map((project) => (
                     <ProjectCard key={project._id} {...project} />
                 ))}
