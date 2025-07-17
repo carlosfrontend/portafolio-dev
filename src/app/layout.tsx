@@ -4,13 +4,12 @@ import "@/app/(frontend)/globals.css";
 import { ThemeProvider } from '@/components/theme-provider';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-// import { ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import dynamic from 'next/dynamic';
 import { SanityLive } from '@/sanity/lib/live';
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
-import { ToastContainerComponent } from "@/components/ToastContainerComponent";
 
 
 const inter = Inter_Tight({
@@ -70,7 +69,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://carlospulido-portafolio.vercel.app'),
 };
 
-
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -85,7 +83,7 @@ export default async function RootLayout({
     <html lang="es" suppressHydrationWarning>
       <CrispWithNoSSR />
       <body className={`${inter.className}  antialiased min-h-dvh `}>
-        <ToastContainerComponent />
+        <ToastContainer />
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="system"

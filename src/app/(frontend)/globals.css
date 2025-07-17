@@ -25,6 +25,3 @@ body {
   flex-direction: column;
   min-height: 100dvh;
 }
-.Toastify__close-button > svg {
-  @apply text-base-content;
-}
