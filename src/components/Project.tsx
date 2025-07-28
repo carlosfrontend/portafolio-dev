@@ -20,19 +20,8 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
                     <span className="mr-2">&laquo;</span> <span>Volver</span>
                 </Link>
                 <PostTitle>{title}</PostTitle>
-
-                {(tags ?? []).length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                        {tags?.map((tag: string) => (
-                            <span key={tag} className="badge badge-outline text-sm">
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                )}
-
                 {description && (
-                    <p className="text-base text-muted">{description}</p>
+                    <p className="text-2xl text-muted">{description}</p>
                 )}
 
                 <div className="flex gap-4 mt-2">
@@ -57,6 +46,15 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
                         </Link>
                     )}
                 </div>
+                {(tags ?? []).length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                        {tags?.map((tag: string) => (
+                            <span key={tag} className="badge badge-outline text-sm">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                )}
             </header>
 
             {mainImage && (
