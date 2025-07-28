@@ -18,7 +18,7 @@ export default function InfiniteScrollIcons() {
         return (
             <article className="overflow-hidden">
                 <h3 className='md:divider text-center py-10 text-3xl md:text:4xl text-accent font-bold'>Habilidades</h3>
-                <div className="h-18 flex items-center justify-center">
+                <div className="min-h-18 skeleton flex items-center justify-center">
                     Cargando habilidades...
                 </div>
             </article>

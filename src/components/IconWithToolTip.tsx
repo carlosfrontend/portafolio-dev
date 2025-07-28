@@ -48,7 +48,7 @@ export default function IconWithTooltip({
             </Tooltip.Trigger>
             <Tooltip.Portal>
                 <Tooltip.Content
-                    className="bg-base-content text-accent-content -rotate-10 text-2xl font-black rounded-md py-1 px-2 shadow-lg z-[9999]"
+                    className="bg-base-content text-accent-content -rotate-10 text-md font-semibold rounded-md py-1 px-2 shadow-lg z-[9999]"
                     sideOffset={5}
                 >
                     {tooltipContent}
