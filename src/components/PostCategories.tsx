@@ -8,7 +8,7 @@ export function PostCategories({ categories }: PostCategoriesProps) {
     return categories.map((category) => (
         <span
             key={category._id}
-            className="leading-none whitespace-nowrap text-xs font-semibold  badge badge-neutral py-2 px-4"
+            className="leading-none whitespace-nowrap text-xs font-semibold  badge py-2 px-4"
         >
             {category.title}
         </span >

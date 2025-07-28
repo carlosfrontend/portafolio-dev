@@ -15,7 +15,7 @@ export default async function Page() {
                     <PostSubitle>Un espacio de programación</PostSubitle>
                 </div>
             </header>
-            <div className="grid md:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-10 md:gap-8 p-6 md:p-12 bg-base-100 w-full">
+            <div className="grid md:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-10 md:gap-8 p-6 md:p-8 bg-base-100 w-full">
                 {posts.map((post) => (
                     <PostCard key={post._id} {...post} />
                 ))}
