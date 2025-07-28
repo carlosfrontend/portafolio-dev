@@ -13,13 +13,31 @@ export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
 
         >
             <article className="flex flex-col gap-4 justify-start items-start p-6">
+                {mainImage && (
+                    <div className="w-full rounded-xs overflow-hidden flex">
+                        <Image
+                            src={urlFor(mainImage).width(400).height(200).url()}
+                            width={400}
+                            height={200}
+                            alt={mainImage.alt || title || ''}
+                            className="transition-transform duration-300 transform ease-in-out group-hover:scale-110 object-cover object-center w-full"
+                            priority={false}
+                            placeholder='blur'
+                            blurDataURL={blurDataUrl}
+                            loading='eager'
+                        />
+                    </div>
+                )}
                 <h4 className="text-xl font-semibold">{title}</h4>
                 <Link
                     href={`/projects/${slug!.current}`}
-                    className="btn btn-soft transform bg-secondary text-accent-content hover:scale-105 transition-all duration-300 ease-in-out"
+                    className="btn md:btn-md btn-soft transform bg-secondary text-accent-content hover:scale-105 transition-all duration-300 ease-in-out"
                 >
                     <span>Saber más</span><span className="ml-2">&raquo;</span>
                 </Link>
+                {description && (
+                    <p className="text-sm text-muted">{description}</p>
+                )}
                 {(tags ?? []).length > 0 && (
                     <div className="flex flex-wrap gap-2">
                         {tags?.map((tag) => (
@@ -27,26 +45,6 @@ export function ProjectCard(props: PROJECTS_QUERYResult[0]) {
                                 {tag}
                             </span>
                         ))}
-                    </div>
-                )}
-
-                {description && (
-                    <p className="text-sm text-muted">{description}</p>
-                )}
-
-                {mainImage && (
-                    <div className="w-full rounded-lg overflow-hidden flex">
-                        <Image
-                            src={urlFor(mainImage).width(400).height(200).url()}
-                            width={400}
-                            height={200}
-                            alt={mainImage.alt || title || ''}
-                            className="transition-transform duration-300 transform ease-in-out group-hover:scale-110 object-cover w-full"
-                            priority={false}
-                            placeholder='blur'
-                            blurDataURL={blurDataUrl}
-                            loading='eager'
-                        />
                     </div>
                 )}
             </article>
