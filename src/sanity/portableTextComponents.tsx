@@ -46,4 +46,19 @@ export const components: PortableTextComponents = {
             );
         },
     },
+    marks: {
+        link: ({ children, value }) => {
+            const { href, blank } = value;
+            return (
+                <a
+                    href={href}
+                    target={blank ? "_blank" : "_self"}
+                    rel={blank ? "noopener noreferrer" : undefined}
+                    className="text-blue-500 underline hover:text-blue-700"
+                >
+                    {children}
+                </a>
+            );
+        },
+    },
 };
