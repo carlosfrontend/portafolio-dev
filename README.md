@@ -2,7 +2,7 @@
 
 Un portafolio moderno y dinámico construido con Next.js 15, React 19 y Sanity CMS, diseñado para mostrar proyectos y artículos de desarrollo frontend con animaciones avanzadas y optimización SEO.
 
-## 🚀 Stack Tecnológico [1](#2-0) 
+## 🚀 Stack Tecnológico 
 
 - **Framework**: Next.js 15.3.3 con React 19
 - **Lenguaje**: TypeScript 5
@@ -15,7 +15,7 @@ Un portafolio moderno y dinámico construido con Next.js 15, React 19 y Sanity C
 
 ## ✨ Características Principales
 
-### 🎨 Sistema de Temas Dual [2](#2-1) 
+### 🎨 Sistema de Temas Dual
 
 - Tema **Corporate** (claro) y **Business** (oscuro)
 - Cambio automático basado en preferencias del sistema
@@ -26,14 +26,14 @@ Un portafolio moderno y dinámico construido con Next.js 15, React 19 y Sanity C
 - Transiciones suaves entre páginas con View Transitions
 - Efectos hover y transformaciones CSS optimizadas
 
-### 📱 SEO y Performance [3](#2-2) 
+### 📱 SEO y Performance 
 
 - Metadata estructurada y OpenGraph completo
 - Sitemap dinámico generado desde Sanity CMS
 - Optimización de imágenes con Next.js Image
 - Fuentes optimizadas con Google Fonts
 
-### 🔄 Gestión de Contenido [4](#2-3) 
+### 🔄 Gestión de Contenido 
 
 - CMS headless con Sanity Studio
 - Generación automática de tipos TypeScript
@@ -76,7 +76,7 @@ SANITY_REVALIDATE_SECRET=tu_secret_key
 NEXT_PUBLIC_CRISP_WEBSITE_ID=tu_crisp_id
 ```
 
-## 📁 Estructura del Proyecto [5](#2-4) 
+## 📁 Estructura del Proyecto
 
 ```
 src/
@@ -95,7 +95,7 @@ src/
 └── types/                   # Definiciones de tipos TypeScript
 ```
 
-## 🎯 Scripts Disponibles [6](#2-5) 
+## 🎯 Scripts Disponibles 
 
 - `npm run dev` - Servidor de desarrollo con Turbopack
 - `npm run build` - Build de producción
@@ -106,22 +106,22 @@ src/
 ## 🏗️ Arquitectura Técnica
 
 ### Sistema de Tipos Automático
-El proyecto utiliza generación automática de tipos TypeScript desde los esquemas de Sanity: [7](#2-6) 
+El proyecto utiliza generación automática de tipos TypeScript desde los esquemas de Sanity: [7] 
 
-### Componentes Principales [8](#2-7) 
+### Componentes Principales 
 
 - **Hero**: Sección principal con animaciones GSAP
 - **AboutSection**: Información personal y profesional  
 - **SkillsSection**: Tecnologías y herramientas
 - **Stats**: Estadísticas dinámicas de proyectos y blog
 
-### Integración con Sanity [9](#2-8) 
+### Integración con Sanity 
 
 - Consultas GROQ tipadas para contenido
 - Revalidación automática via webhooks
 - Soporte para contenido rico con PortableText
 
-## 🎨 Personalización de Temas [10](#2-9) 
+## 🎨 Personalización de Temas 
 
 El sistema de temas adapta iconos y colores automáticamente según el tema activo, proporcionando una experiencia visual coherente.
 
@@ -133,7 +133,7 @@ El proyecto está optimizado para deployment en Vercel:
 2. Configurar variables de entorno
 3. El build automático incluye generación de tipos
 
-## 📞 Soporte y Chat [11](#2-10) 
+## 📞 Soporte y Chat 
 
 Integración con Crisp Chat que se oculta automáticamente en el Sanity Studio para una experiencia de edición limpia.
 
@@ -155,9 +155,9 @@ Integración con Crisp Chat que se oculta automáticamente en el Sanity Studio p
 
 **Desarrollado por Carlos Pulido** | [LinkedIn](https://www.linkedin.com/in/carlosfrontend/) | [GitHub](https://github.com/carlosfrontend)
 
-## Notes
+## Notas
 
 Documentación que podrías querer explorar:
-- [Overview (carlosfrontend/portafolio-dev)](/wiki/carlosfrontend/portafolio-dev#1)
-- [Architecture & Configuration (carlosfrontend/portafolio-dev)](/wiki/carlosfrontend/portafolio-dev#2)
-- [Sanity Integration & Type System (carlosfrontend/portafolio-dev)](/wiki/carlosfrontend/portafolio-dev#4.1)
+- [Overview (carlosfrontend/portafolio-dev)](https://deepwiki.com/carlosfrontend/portafolio-dev/1-overview)
+- [Architecture & Configuration (carlosfrontend/portafolio-dev)](https://deepwiki.com/carlosfrontend/portafolio-dev/2-architecture-and-configuration)
+- [Sanity Integration & Type System (carlosfrontend/portafolio-dev)](https://deepwiki.com/carlosfrontend/portafolio-dev/4.1-sanity-integration-and-type-system)
