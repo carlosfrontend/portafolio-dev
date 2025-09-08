@@ -3,9 +3,11 @@ import { POSTS_QUERY } from '@/sanity/lib/queries'
 import { PostCard } from '@/components/PostCard'
 import { PostTitle } from '@/components/PostTitle'
 import { PostSubitle } from "@/components/PostSubtitle";
+import { POSTS_QUERYResult } from "@/sanity/types";
 
 export default async function Page() {
-    const { data: posts } = await sanityFetch({ query: POSTS_QUERY });
+    const { data }: { data: POSTS_QUERYResult } = await sanityFetch({ query: POSTS_QUERY });
+    const posts = data;
 
     return (
         <div>
