@@ -73,7 +73,7 @@ export function Project(props: NonNullable<PROJECT_QUERYResult>) {
             )}
 
             {body && (
-                <div className="prose text-lg sm:prose-base lg:prose-lg xl:prose-xl mx-auto">
+                <div className="prose text-lg sm:prose-base lg:prose-lg xl:prose-xl">
                     <PortableText value={body} components={components} />
                 </div>
             )}
