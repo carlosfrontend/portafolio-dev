@@ -2,6 +2,8 @@
 
 Un portafolio moderno y dinámico construido con Next.js 15, React 19 y Sanity CMS, diseñado para mostrar proyectos y artículos de desarrollo frontend con animaciones avanzadas y optimización SEO.
 
+<img width="1896" height="922" alt="Captura desde 2025-09-08 14-03-51" src="https://github.com/user-attachments/assets/0d66bfa9-cbba-419f-876a-38d08a259f57" />
+
 ## 🚀 Stack Tecnológico 
 
 - **Framework**: Next.js 15.3.3 con React 19
