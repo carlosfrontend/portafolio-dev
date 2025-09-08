@@ -1,40 +1,163 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portafolio de Carlos Pulido - Desarrollador Frontend
 
-## Getting Started
+Un portafolio moderno y dinámico construido con Next.js 15, React 19 y Sanity CMS, diseñado para mostrar proyectos y artículos de desarrollo frontend con animaciones avanzadas y optimización SEO.
 
-First, run the development server:
+## 🚀 Stack Tecnológico [1](#2-0) 
 
+- **Framework**: Next.js 15.3.3 con React 19
+- **Lenguaje**: TypeScript 5
+- **Styling**: TailwindCSS 4.1.8 + DaisyUI 5.0.43
+- **CMS**: Sanity 3.94.2 con next-sanity 9.12.0
+- **Animaciones**: GSAP 3.13.0 con @gsap/react 2.1.2
+- **Temas**: next-themes 0.4.6 con soporte para modo oscuro/claro
+- **Chat**: Crisp SDK Web para soporte en tiempo real
+- **Notificaciones**: React Toastify 11.0.5
+
+## ✨ Características Principales
+
+### 🎨 Sistema de Temas Dual [2](#2-1) 
+
+- Tema **Corporate** (claro) y **Business** (oscuro)
+- Cambio automático basado en preferencias del sistema
+- Integración completa con DaisyUI
+
+### 🎬 Animaciones Avanzadas
+- Animaciones GSAP con SplitText para efectos de texto
+- Transiciones suaves entre páginas con View Transitions
+- Efectos hover y transformaciones CSS optimizadas
+
+### 📱 SEO y Performance [3](#2-2) 
+
+- Metadata estructurada y OpenGraph completo
+- Sitemap dinámico generado desde Sanity CMS
+- Optimización de imágenes con Next.js Image
+- Fuentes optimizadas con Google Fonts
+
+### 🔄 Gestión de Contenido [4](#2-3) 
+
+- CMS headless con Sanity Studio
+- Generación automática de tipos TypeScript
+- Revalidación en tiempo real via webhooks
+- Soporte para contenido rico (código, imágenes, videos)
+
+## 🛠️ Instalación y Configuración
+
+### Prerrequisitos
+- Node.js 18+ 
+- npm, pnpm o bun
+
+### Instalación
 ```bash
+# Clonar el repositorio
+git clone https://github.com/carlosfrontend/portafolio-dev.git
+cd portafolio-dev
+
+# Instalar dependencias
+npm install
+
+# Generar tipos de Sanity
+npm run typegen
+
+# Iniciar servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-```bash
+### Variables de Entorno
+Crear un archivo `.env.local` con:
 
+```env
+# Sanity Configuration
+NEXT_PUBLIC_SANITY_PROJECT_ID=tu_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_API_READ_TOKEN=tu_read_token
+SANITY_REVALIDATE_SECRET=tu_secret_key
+
+# Crisp Chat
+NEXT_PUBLIC_CRISP_WEBSITE_ID=tu_crisp_id
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Estructura del Proyecto [5](#2-4) 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/
+│   ├── (frontend)/          # Páginas públicas
+│   │   ├── page.tsx         # Homepage con Hero y secciones
+│   │   ├── blog/            # Sistema de blog
+│   │   ├── projects/        # Galería de proyectos
+│   │   └── timeline/        # Línea de tiempo profesional
+│   ├── api/                 # API Routes
+│   │   └── revalidate/      # Webhook de revalidación
+│   └── layout.tsx           # Layout raíz con providers
+├── components/              # Componentes reutilizables
+├── sanity/                  # Configuración y tipos de Sanity
+├── consts/                  # Constantes y configuraciones
+└── types/                   # Definiciones de tipos TypeScript
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎯 Scripts Disponibles [6](#2-5) 
 
-## Learn More
+- `npm run dev` - Servidor de desarrollo con Turbopack
+- `npm run build` - Build de producción
+- `npm run start` - Servidor de producción
+- `npm run lint` - Linting con ESLint
+- `npm run typegen` - Generación de tipos desde Sanity
 
-To learn more about Next.js, take a look at the following resources:
+## 🏗️ Arquitectura Técnica
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Sistema de Tipos Automático
+El proyecto utiliza generación automática de tipos TypeScript desde los esquemas de Sanity: [7](#2-6) 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Componentes Principales [8](#2-7) 
 
-## Deploy on Vercel
+- **Hero**: Sección principal con animaciones GSAP
+- **AboutSection**: Información personal y profesional  
+- **SkillsSection**: Tecnologías y herramientas
+- **Stats**: Estadísticas dinámicas de proyectos y blog
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Integración con Sanity [9](#2-8) 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Consultas GROQ tipadas para contenido
+- Revalidación automática via webhooks
+- Soporte para contenido rico con PortableText
+
+## 🎨 Personalización de Temas [10](#2-9) 
+
+El sistema de temas adapta iconos y colores automáticamente según el tema activo, proporcionando una experiencia visual coherente.
+
+## 🚀 Deployment
+
+El proyecto está optimizado para deployment en Vercel:
+
+1. Conectar repositorio a Vercel
+2. Configurar variables de entorno
+3. El build automático incluye generación de tipos
+
+## 📞 Soporte y Chat [11](#2-10) 
+
+Integración con Crisp Chat que se oculta automáticamente en el Sanity Studio para una experiencia de edición limpia.
+
+## 🔧 Tecnologías de Desarrollo
+
+- **ESLint**: Configuración con reglas de Next.js
+- **TypeScript**: Tipado estricto en todo el proyecto
+- **Tailwind CSS**: Utility-first CSS framework
+- **GSAP**: Animaciones de alto rendimiento
+
+## 📈 SEO y Analytics
+
+- Sitemap dinámico generado desde contenido CMS
+- Metadata estructurada para redes sociales
+- Optimización de Core Web Vitals
+- Soporte completo para OpenGraph y Twitter Cards
+
+---
+
+**Desarrollado por Carlos Pulido** | [LinkedIn](https://www.linkedin.com/in/carlosfrontend/) | [GitHub](https://github.com/carlosfrontend)
+
+## Notes
+
+Documentación que podrías querer explorar:
+- [Overview (carlosfrontend/portafolio-dev)](/wiki/carlosfrontend/portafolio-dev#1)
+- [Architecture & Configuration (carlosfrontend/portafolio-dev)](/wiki/carlosfrontend/portafolio-dev#2)
+- [Sanity Integration & Type System (carlosfrontend/portafolio-dev)](/wiki/carlosfrontend/portafolio-dev#4.1)
