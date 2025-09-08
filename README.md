@@ -4,7 +4,7 @@ Un portafolio moderno y dinámico construido con Next.js 15, React 19 y Sanity C
 
 <img width="1896" height="922" alt="Captura desde 2025-09-08 14-03-51" src="https://github.com/user-attachments/assets/0d66bfa9-cbba-419f-876a-38d08a259f57" />
 
-## 🚀 Stack Tecnológico 
+## 🚀 Stack Tecnológico
 
 - **Framework**: Next.js 15.3.3 con React 19
 - **Lenguaje**: TypeScript 5
@@ -24,18 +24,19 @@ Un portafolio moderno y dinámico construido con Next.js 15, React 19 y Sanity C
 - Integración completa con DaisyUI
 
 ### 🎬 Animaciones Avanzadas
+
 - Animaciones GSAP con SplitText para efectos de texto
 - Transiciones suaves entre páginas con View Transitions
 - Efectos hover y transformaciones CSS optimizadas
 
-### 📱 SEO y Performance 
+### 📱 SEO y Performance
 
 - Metadata estructurada y OpenGraph completo
 - Sitemap dinámico generado desde Sanity CMS
 - Optimización de imágenes con Next.js Image
 - Fuentes optimizadas con Google Fonts
 
-### 🔄 Gestión de Contenido 
+### 🔄 Gestión de Contenido
 
 - CMS headless con Sanity Studio
 - Generación automática de tipos TypeScript
@@ -45,10 +46,12 @@ Un portafolio moderno y dinámico construido con Next.js 15, React 19 y Sanity C
 ## 🛠️ Instalación y Configuración
 
 ### Prerrequisitos
-- Node.js 18+ 
+
+- Node.js 18+
 - npm, pnpm o bun
 
 ### Instalación
+
 ```bash
 # Clonar el repositorio
 git clone https://github.com/carlosfrontend/portafolio-dev.git
@@ -65,6 +68,7 @@ npm run dev
 ```
 
 ### Variables de Entorno
+
 Crear un archivo `.env.local` con:
 
 ```env
@@ -80,7 +84,7 @@ NEXT_PUBLIC_CRISP_WEBSITE_ID=tu_crisp_id
 
 ## 📁 Estructura del Proyecto
 
-```
+```ini
 src/
 ├── app/
 │   ├── (frontend)/          # Páginas públicas
@@ -97,7 +101,7 @@ src/
 └── types/                   # Definiciones de tipos TypeScript
 ```
 
-## 🎯 Scripts Disponibles 
+## 🎯 Scripts Disponibles
 
 - `npm run dev` - Servidor de desarrollo con Turbopack
 - `npm run build` - Build de producción
@@ -108,22 +112,23 @@ src/
 ## 🏗️ Arquitectura Técnica
 
 ### Sistema de Tipos Automático
-El proyecto utiliza generación automática de tipos TypeScript desde los esquemas de Sanity: [7] 
 
-### Componentes Principales 
+El proyecto utiliza generación automática de tipos TypeScript desde los esquemas de Sanity: [7]
+
+### Componentes Principales
 
 - **Hero**: Sección principal con animaciones GSAP
-- **AboutSection**: Información personal y profesional  
+- **AboutSection**: Información personal y profesional
 - **SkillsSection**: Tecnologías y herramientas
 - **Stats**: Estadísticas dinámicas de proyectos y blog
 
-### Integración con Sanity 
+### Integración con Sanity
 
 - Consultas GROQ tipadas para contenido
 - Revalidación automática via webhooks
 - Soporte para contenido rico con PortableText
 
-## 🎨 Personalización de Temas 
+## 🎨 Personalización de Temas
 
 El sistema de temas adapta iconos y colores automáticamente según el tema activo, proporcionando una experiencia visual coherente.
 
@@ -135,7 +140,7 @@ El proyecto está optimizado para deployment en Vercel:
 2. Configurar variables de entorno
 3. El build automático incluye generación de tipos
 
-## 📞 Soporte y Chat 
+## 📞 Soporte y Chat
 
 Integración con Crisp Chat que se oculta automáticamente en el Sanity Studio para una experiencia de edición limpia.
 
@@ -153,6 +158,11 @@ Integración con Crisp Chat que se oculta automáticamente en el Sanity Studio p
 - Optimización de Core Web Vitals
 - Soporte completo para OpenGraph y Twitter Cards
 
+## 📄⚖️📘 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver LICENSE.md para más detalles.
+📑🔓📝
+
 ---
 
 **Desarrollado por Carlos Pulido** | [LinkedIn](https://www.linkedin.com/in/carlosfrontend/) | [GitHub](https://github.com/carlosfrontend)
@@ -160,6 +170,7 @@ Integración con Crisp Chat que se oculta automáticamente en el Sanity Studio p
 ## Notas
 
 Documentación que podrías querer explorar:
+
 - [Overview (carlosfrontend/portafolio-dev)](https://deepwiki.com/carlosfrontend/portafolio-dev/1-overview)
 - [Architecture & Configuration (carlosfrontend/portafolio-dev)](https://deepwiki.com/carlosfrontend/portafolio-dev/2-architecture-and-configuration)
 - [Sanity Integration & Type System (carlosfrontend/portafolio-dev)](https://deepwiki.com/carlosfrontend/portafolio-dev/4.1-sanity-integration-and-type-system)
