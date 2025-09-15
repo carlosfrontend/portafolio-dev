@@ -38,6 +38,12 @@ export const blockContentType = defineType({
                 type: 'boolean',
                 initialValue: true,
               },
+              {
+                title: 'Pon un título aria-label para accesibilidad de este enlace',
+                name: 'aria',
+                type: 'string',
+                initialValue: null,
+              },
             ],
           },
         ],
@@ -66,6 +72,7 @@ export const blockContentType = defineType({
         languageAlternatives: [
           { title: 'JavaScript', value: 'javascript' },
           { title: 'TypeScript', value: 'typescript' },
+          { title: 'React', value: 'react' },
           { title: 'HTML', value: 'html' },
           { title: 'CSS', value: 'css' },
           { title: 'Python', value: 'python' },
@@ -74,6 +81,7 @@ export const blockContentType = defineType({
           { title: 'Markdown', value: 'markdown' },
           { title: 'Go', value: 'go' },
           { title: 'Java', value: 'java' },
+
         ],
       },
     }),

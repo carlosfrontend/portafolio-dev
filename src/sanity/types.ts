@@ -49,6 +49,7 @@ export type Project = {
     markDefs?: Array<{
       href?: string;
       blank?: boolean;
+      aria?: string;
       _type: "link";
       _key: string;
     }>;
@@ -126,6 +127,7 @@ export type Post = {
     markDefs?: Array<{
       href?: string;
       blank?: boolean;
+      aria?: string;
       _type: "link";
       _key: string;
     }>;
@@ -244,6 +246,7 @@ export type BlockContent = Array<{
   markDefs?: Array<{
     href?: string;
     blank?: boolean;
+    aria?: string;
     _type: "link";
     _key: string;
   }>;
@@ -420,6 +423,7 @@ export type POSTS_QUERYResult = Array<{
     markDefs?: Array<{
       href?: string;
       blank?: boolean;
+      aria?: string;
       _type: "link";
       _key: string;
     }>;
@@ -503,6 +507,7 @@ export type POST_QUERYResult = {
     markDefs?: Array<{
       href?: string;
       blank?: boolean;
+      aria?: string;
       _type: "link";
       _key: string;
     }>;
@@ -631,6 +636,7 @@ export type PROJECT_QUERYResult = {
     markDefs?: Array<{
       href?: string;
       blank?: boolean;
+      aria?: string;
       _type: "link";
       _key: string;
     }>;

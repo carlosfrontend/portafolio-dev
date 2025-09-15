@@ -274,6 +274,13 @@
                             },
                             "optional": true
                           },
+                          "aria": {
+                            "type": "objectAttribute",
+                            "value": {
+                              "type": "string"
+                            },
+                            "optional": true
+                          },
                           "_type": {
                             "type": "objectAttribute",
                             "value": {
@@ -809,6 +816,13 @@
                             "type": "objectAttribute",
                             "value": {
                               "type": "boolean"
+                            },
+                            "optional": true
+                          },
+                          "aria": {
+                            "type": "objectAttribute",
+                            "value": {
+                              "type": "string"
                             },
                             "optional": true
                           },
@@ -1603,6 +1617,13 @@
                         "type": "objectAttribute",
                         "value": {
                           "type": "boolean"
+                        },
+                        "optional": true
+                      },
+                      "aria": {
+                        "type": "objectAttribute",
+                        "value": {
+                          "type": "string"
                         },
                         "optional": true
                       },

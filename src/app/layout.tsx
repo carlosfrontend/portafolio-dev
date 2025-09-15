@@ -92,7 +92,7 @@ export default async function RootLayout({
 
         >
           <Navbar />
-          <main className="w-full bg-base-200">
+          <main className="w-full bg-base-100">
             {children}
             <SanityLive />
             {(await draftMode()).isEnabled && (

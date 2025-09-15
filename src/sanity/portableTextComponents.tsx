@@ -48,13 +48,14 @@ export const components: PortableTextComponents = {
     },
     marks: {
         link: ({ children, value }) => {
-            const { href, blank } = value;
+            const { href, blank, aria } = value;
             return (
                 <a
                     href={href}
                     target={blank ? "_blank" : "_self"}
                     rel={blank ? "noopener noreferrer" : undefined}
-                    className="text-blue-500 underline hover:text-blue-700"
+                    className="link-secondary"
+                    aria-label={aria !== undefined ? aria : null}
                 >
                     {children}
                 </a>
