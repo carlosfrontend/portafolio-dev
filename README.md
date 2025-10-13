@@ -165,7 +165,7 @@ Este proyecto está bajo la Licencia MIT. Ver LICENSE.md para más detalles.
 
 ---
 
-**Desarrollado por Carlos Pulido** | [LinkedIn](https://www.linkedin.com/in/carlosfrontend/) | [GitHub](https://github.com/carlosfrontend)
+**Desarrollado por Carlos Pulido** | [LinkedIn](https://www.linkedin.com/in/carloshelpdek/) | [GitHub](https://github.com/carlosfrontend)
 
 ## Notas
 
